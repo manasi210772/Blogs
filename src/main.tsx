@@ -38,7 +38,7 @@ const staticRoutes = [
 ];
 
 const routes = blogRoutes.concat(staticRoutes);
-const router = createBrowserRouter(routes, { basename: "/rajnikam" });
+const router = createBrowserRouter(routes, { basename: "/" });
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />

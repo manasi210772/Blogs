@@ -12,7 +12,7 @@ export default defineConfig({
       rehypePlugins: [rehypePrism],
     }),
   ],
-  base: "/rajnikam/",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
