@@ -3,14 +3,14 @@ const Footer: React.FC = () => {
   return (
     <footer className="my-7 w-full flex justify-between font-sans-serif text-gray-600 dark:text-gray-400">
       <div className="text-gray-600 dark:text-gray-400">
-        © {currentYear} Raj Nikam.
+        © {currentYear} Manasi Patil.
       </div>
       <div className="links flex gap-1">
         <a
           className="text-sm text-gray-500 dark:text-gray-400 transition dark:hover:text-gray-300 hover:text-gray-900"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/craniacshencil"
+          href="https://github.com/manasi210772"
         >
           <svg
             viewBox="0 0 24 24"
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           className="text-sm text-gray-500 dark:text-gray-400 transition dark:hover:text-gray-300 hover:text-gray-900"
           target="_blank"
           rel="noopener noreferrer"
-          href="mailto:rajnikam26@apsit.edu.in"
+          href="mailto:manasi210772@gmail.com"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
           className="text-sm text-gray-500 dark:text-gray-400 transition dark:hover:text-gray-300 hover:text-gray-900"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://in.linkedin.com/in/nikamraj"
+          href="https://www.linkedin.com/in/manasi-patil-596034326/"
         >
           <svg
             viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
           className="text-sm text-gray-500 dark:text-gray-400 transition dark:hover:text-gray-300 hover:text-gray-900"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.kaggle.com/nickuhm"
+          href="https://www.kaggle.com/manasi210772"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
