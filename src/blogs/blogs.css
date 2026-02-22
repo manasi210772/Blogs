@@ -1,0 +1,110 @@
+@import "./codeblock.css";
+/* Realtime colors settings */
+.blog {
+  --text: hsl(274 60% 20%);
+  --background: hsl(289, 11%, 85%);
+  --primary: hsl(274 46% 30%);
+  --secondary: hsl(274 55% 66%);
+  --accent: hsl(274 53% 53%);
+}
+.dark .blog {
+  --text: hsl(274 30% 91%);
+  --background: hsl(276 38% 5%);
+  --primary: hsl(274 46% 70%);
+  --secondary: hsl(274 55% 34%);
+  --accent: hsl(274 63% 57%);
+}
+
+.blog h1 {
+  color: var(--text);
+  font-size: 2rem;
+  border-bottom: 1px solid gray;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+.blog h3 {
+  color: var(--text);
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog a {
+  color: var(--accent);
+}
+
+.blog a:hover {
+  opacity: 70%;
+}
+
+/*.blog pre {*/
+/*  font-size: 0.8rem;*/
+/*  background-color: #282828;*/
+/*  padding-left: 0.5rem;*/
+/*  border-radius: 0.2rem;*/
+/*  padding-bottom: 0.5rem;*/
+/*  padding-top: 0.5rem;*/
+/*  overflow-x: hidden;*/
+/*  margin-top: 0.75rem;*/
+/*  margin-bottom: 0.75rem;*/
+/**/
+/*  white-space: pre-wrap;*/
+/*  word-wrap: break-word;*/
+/*  overflow-wrap: break-word;*/
+/*  max-width: 100%;*/
+/*  width: 100%;*/
+/*}*/
+
+.blog ul,
+ol {
+  color: var(--text);
+  padding-left: 1.5rem;
+}
+
+.blog ol {
+  /* always numbers in ol */
+  list-style: decimal;
+}
+
+.blog ul {
+  list-style-type: circle;
+}
+
+.blog img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.3rem;
+}
+
+.blog p {
+  color: var(--text);
+  display: block;
+  margin-top: 1rem;
+}
+
+.blog blockquote {
+  color: color-mix(in hsl, var(--text) 85%, var(--primary));
+  background: color-mix(in hsl, var(--background) 90%, var(--primary));
+  border-left: 4px solid var(--accent);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0.3rem;
+  font-style: italic;
+}
+
+.blog blockquote p {
+  padding: 0;
+  margin: 0;
+}

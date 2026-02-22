@@ -1,0 +1,93 @@
+export const slug = "linux_for_the_first_time";
+export const title = "Linux for the first time";
+export const date = "24-11-2024";
+export const excerpt =
+  "Dual-booting for the first time, the ups and downs, foraging through forums and overcomplicating everything";
+// write tags in alphabetical order, "search by tag" has this requirement for faster matching algorithm
+export const tags = ["linux"];
+
+# Linux for the first time
+
+## Reasons to switch
+
+I have always wanted to switch to Linux since the beginning of college. All of our lab work was done on Ubuntu (ranging from 18.04 to 22.04) and it was pretty easy and snappy to use.
+I had used windows all my life, its pretty good at what it does but the recent direction that microsoft has been taking, I have not been a fan. The copilot updates, bing ai, ai features here, ai features there.
+
+For my programming work, I was using WSL for about 6 months and it had started slowing down.
+On opening the terminal it would visibly take 5-10 seconds for the shell to be responsive. Also WSL is amazing but it had started getting messy. Databases were on windows, so was anaconda but jdk, nodejs was on WSL.
+I had a terrible time where [one of my projects](https://github.com/craniacshencil/campusSWAP) involving a django backend and vuejs frontend wasn't working because of the "anaconda-on-windows and node-on-WSL" shenanigans.
+
+Also I am a pretty lean computer user, I code, browse the internet and dabble in documents and presentations for college.
+No gaming or extensive video editing meant that Linux was pretty much perfect for me (although gaming and video editing aren't huge bottlenecks on linux now).
+
+Most servers run Linux, its the industry standard and the best way to learn it is to use it. I have been itching to switch but dual booting, partitioning, wiping out drives has kept me away. Also, I had started watching [thePrimeagen](https://www.youtube.com/@ThePrimeTimeagen) seeing his _coconut oil smooth blazingly fast_ workflow was also a major motivator for me to take the final step. Also [one of my classmates](https://github.com/forlorn1216) happened to be a distrohopper, who literally held my hand through every step of the installation.
+
+## D-day
+
+Choosing a distro was pretty easy, I chose [mint (21.3 at the time)](https://www.linuxmint.com/). It has garnered a reputation for not breaking and working out of the box. I watched [Learnlinuxtv's mint installation video](https://www.youtube.com/watch?v=B97KkFDv86s) to get started. Saved my windows product key just incase.
+The standard step, created bootable media with [usbimager](https://gitlab.com/bztsrc/usbimager). Then started spamming keys to boot from my pendrive. F3 opened a window that allowed me to boot using a device.
+
+I was in live mode. Checked the audio, wifi was working (surprisingly) watched some youtube video. Cinnamon seemed pretty intuitive so I went forward with the installation. I proceeded with the install and then encountered BitLocker.
+
+<img src="/rajnikam/linux_for_the_first_time/bitlocker.jpeg" />
+
+Bitlocker is a disk encryption software that makes sure that your data is protected.
+The Linux bootable media is seen as an "outsider" that is not authorized to make changes to the disk.
+I thought I had bsod'ed and locked up my drive for good but turns out the recovery keys are present on your microsoft account.
+
+I had to abandon the install, boot into windows and disable BitLocker from my drives. Even after this incident, I still did not take a
+backup of my windows partition. Also I didn't figure these things out on my own I had my classmate on text guiding me. By this time I would have backed out if I was on my own.
+
+My D drive was empty anyway so I made a 150Gb partition to house mint. Also I realized F3 led me to windows' advanced startup and not actually my boot menu. F9 was the key to enter boot menu, I booted from device and had my first error.
+
+<img src="/rajnikam/linux_for_the_first_time/error.jpeg"></img>
+
+All this time I also had secure boot enabled so I disabled it and tried again, same result. Both of us thought the error might be
+stemming out of the bootable media so I decided to create it again. Booted into windows and now my pendrive wasn't getting recognized.
+
+<img src="/rajnikam/linux_for_the_first_time/bricked-pendrive.jpeg"></img>
+
+I rebooted and then again the same message, then I plugged my pendrive in another port and voila! It was working. I had a sigh of relief but then realized, if its not
+the pendrive my USB port got fried? Switched the ports again and now was it working? Yes it was.
+Nothing was fried. I then decided to check my USB and this is what I see.
+
+<img src="/rajnikam/linux_for_the_first_time/shrunk-pendrive.jpeg"></img>
+
+I was shocked, now I had no doubt in my head that my pendrive was broken. My 8Gb pendrive now only had 4.9Mb space in total. I did a quick google search and realized this is very common.
+Not pendrives breaking down, it is windows not being able to recognize "bootable media" as storage space. Windows uses NTFS and the bootable media probably had "ext4/gpt" partitions. I found this [handy video](https://www.youtube.com/watch?v=bHqFaJfpviI) and formatted my pendrive and renamed it. The utility "diskpart" mentioned in this video also solves the problem of windows not recognizing your pendrive.
+
+Again after BitLocker, this was the second detour. I thought the problem was with usbimager and so I created my bootable media with
+[rufus](https://rufus.ie/en/). Went through all the steps again and still the same error from before.
+
+On reading the error it mentioned the file "mmx64.efi", in my bootable media I couldn't find that file.
+So I thought I should try a different flavour of mint, instead of the normal cinnamon which shipped with linux kernel version 5.15, I opted for
+Cinnamon Edge which shipped with a newer linux kernel version 6.5 . It was most probably not the issue, but still I had to try.
+
+With this new version, I couldn't get rufus to build the bootable media. I tried twice and it failed "while writing"
+(I know its vague, I don't have a screenshot to show). I reverted back to usbimager which built the bootable media successfully.
+By this time I had spent almost an entire day and I was still technically on the first step.
+Also, at this point I had done a lot of reading online and along with Secure boot, Fast boot also had to be disabled.
+I couldn't find it in my BIOS settings, but I disabled "fast startup" on windows.
+
+Tried to install again and still the same error. I took this error to the mint forums and found a [person who was literally narrating my story](https://forums.linuxmint.com/viewtopic.php?t=418347).
+We had the same issues and someone suggested him to rename the "gnubx64.efi" file to "mmx64.efi".
+I tried this as my last attempt.
+
+Switched off my latop, booted it again, spammed F9 for the umpteenth time and finally it happened, the live boot opened for the first time in I don't know how many hours.
+It had only opened once for me during the BitLocker saga.
+I went forward with the installation and there I had it, my first installation of Linux. Felt good.
+
+<img src="/rajnikam/linux_for_the_first_time/success.jpeg" />
+
+Its been six months on Linux, dare I say Linux contrarily has been giving me way less hiccups than windows. I spent the first 2 weeks ricing (maybe I'll write about it later) and have pretty much not used windows ever since.
+
+Now all of this was only possible because I had [forlorn](https://github.com/forlorn1216) on text with me telling me what to do at every step. It had gotten so crazy and complicated while I was trying to install,
+he nuked his debian install and installed mint again just to make sure I was doing everything correctly.
+
+### References
+
+- [Forlorn](https://github.com/forlorn1216)
+- [Learnlinuxtv mint installation](https://www.youtube.com/watch?v=B97KkFDv86s)
+- [Sandipsky mint installation: I ended up following his method by creating partitions beforehand](https://www.youtube.com/watch?v=4CKo2XvdUcM)
+- [If your pendrive isn't showing up, or has shrunk in size](https://www.youtube.com/watch?v=bHqFaJfpviI)
+- [The helpful mint forums thread](https://forums.linuxmint.com/viewtopic.php?t=418347)

@@ -1,0 +1,57 @@
+export const slug = "terrible_ux_made_me_think_i_ruined_my_degree"
+export const title = "Terrible UX made me think I ruined my degree"
+export const date = "15-11-2025"
+export const excerpt = "Display your errors well"
+// write tags in alphabetical order, "search by tag" has this requirement for faster matching algorithm 
+export const tags = ["web"]
+
+# Terrible UX made me think I ruined my degree
+## The Context
+I am a student from Mumbai University (MU). It is a whole franchise-esque system. There are multiple "colleges" that subscribe to MU's syllabus. So within Mumbai,
+there's around 50-100 colleges that have their own students. But the courses are designed by MU, so the semester exams are common for everyone.
+
+For the first 6 semesters, exams happened in our college itself. But this time around, they have introduced a hall-ticket system where you get assigned a random
+venue where you're supposed to give your exams. These hall-tickets were supposed to come out on a unified website where you can enter your enrollment number and get
+to know your exam venue.
+
+## The Website 
+The website went live just 3 days before the first exam. As the link was circulated amongst colleges, the site instantly went down due to load. It was the good
+old familiar message: "Temporarily Unavailable". This was expected, all my life every exam related website for hall-tickets, results, registrations, applications
+have been consistently terrible at handling load. Its literally been 10 years, no sign of improvement.
+
+<img src="/rajnikam/terrible_ux_made_me_think_i_ruined_my_degree/temporarily_unavailable.png" alt="temporarily unavailable screen" />
+
+The few people from my class who managed to check had gotten our own college as the exam center. Our seat numbers are right next to each other so without even
+checking I knew that my center would also be the same. Still for my own sanity, i wanted to check if my hall-ticket was generated and the details were all correct.
+
+## The Fiasco
+A few hours had passed the initial burst of traffic would've died down. So decided to check then, still the same error **"Temporarily Unavailable"**. A bit suspect,
+reached out to friends, they said the site was working just fine. Out of curiousity, I sent them my enrollment number to check if its my machine that is caching
+some old version of the page maybe. Even on their machines, as soon as they entered my number it said **"Temporarily Unavailable"**. And now this is where things 
+started going wrong. When they checked with their own hall-ticket it was working. Easy, method of elimination, I took their enrollment numbers and the 
+site was now, well, working? It was not the site, I told myself. Its me!
+
+At this point, I was sunk. Exam's 3 days away and seems like I'm not even registered for it. I soon remembered how I was super late to pay my "exam fees" and thought 
+that would've triggered it. I drafted a whole message and sent it to the Head of Department as well. I was done for.
+
+Amidst my existential crisis, one of my friends noticed, that I had forwarded the wrong enrollment number. Enrollment numbers are 15 digits long, while mine was 14 (I was
+missing a 0 somewhere). On running the correct one; there it was in all its glory! My hall-ticket was there. The venue was my college itself. I need to only worry 
+about exams thankfully, no commute shenanigans.
+
+My guess is that she must've probably realized, with the browsers default drop-down of text-fields showing 2 different length enrollment numbers
+<img src="/rajnikam/terrible_ux_made_me_think_i_ruined_my_degree/dropdown_clue.png" alt="dropdown screen" />
+
+This happened because instead of copy + pasting my enrollment number, like everyone else was. I was typing mine out manually from my marksheet 
+hard copies. All it would've taken was to add a simple check, whether the enrollment numbers were 15 digits long / some simple validation logic. But nope, "Temporarily Unavailable" it is. I mean factually it is true, there exists no hall-ticket for an enrollment number that doesn't exist. But that's not how a normal person will 
+interpret this (omg, I am writing this while preparing for my NLP exams, this is a case of "pragamtic ambiguity" btw)
+
+## The Irony
+This university designs courses on web computing, distributed computing but can't make a website that scales. Also interesting choice of colors here **bright green**
+for **"Temporarily Unavailable"**. Also, to know why the page is unavailable, to get more context about whats going wrong, you can click "View Details". And you get 
+greeted with .net C# server logs, ahh yes lingua franka itself. So easy for a layman to understand.
+
+<img src="/rajnikam/terrible_ux_made_me_think_i_ruined_my_degree/stack_trace.png" alt="stack trace" />
+
+Funny thing is, for this very exam I have a course **User experience & Design with VR**, UX, right sure, these guys will be testing us on UX. But still a good reminder , if you can copy paste an important value like some form number, application number, serial number. Do it. 
+
+Shout-out to my friends for ending my life crisis that lasted a grand total of 6 minutes probably. Display your errors well, someone out there will apprecaite it.

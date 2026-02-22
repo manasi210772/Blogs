@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  height: 100vh;
+  width: 100vw;
+
+  font-family:
+    Palatino,
+    serif,
+    Georgia,
+    Garamond,
+    Times New Roman;
+
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+/* Realtime colors + shadcn settings */
+@layer base {
+  :root {
+    --text: 274 30% 30%;
+    --background: 289 11% 85%;
+    --primary: 274 46% 30%;
+    --secondary: 274 55% 66%;
+    --accent: 274 53% 53%;
+
+    /* Scrollbar (light mode) */
+    --scrollbar-track: #e2dbe8;
+    --scrollbar-thumb: #b5a8c2;
+    --scrollbar-thumb-hover: #8a7a9b;
+  }
+
+  .dark {
+    --text: 274 30% 91%;
+    --background: 276 38% 5%;
+    --primary: 274 46% 70%;
+    --secondary: 274 55% 34%;
+    --accent: 274 63% 57%;
+
+    /* Scrollbar (dark mode) */
+    --scrollbar-track: #1f1d2e;
+    --scrollbar-thumb: #44415a;
+    --scrollbar-thumb-hover: #6e6a86;
+  }
+}
+
+/* MAIN scrollbar (html/body) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+/* Firefox main scrollbar */
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}

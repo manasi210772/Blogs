@@ -1,0 +1,156 @@
+export const slug = "shrink_docker_image_10x"
+export const title = "How I shrunk the size of my Docker image by 10x"
+export const date = "25-08-2025"
+export const excerpt = "Working through a bloated and annoying docker image, to optimize it for faster builds"
+// write tags in alphabetical order, "search by tag" has this requirement for faster matching algorithm 
+export const tags = ["docker", "javascript", "web"]
+
+
+# How I shrunk the size of my Docker image by 10x
+This app that I dockerized, is an AI chat app, the frontend was written in good old vite + react and the backend in express. The moving parts included nginx to
+serve both the frontend and backend, a chrome installation for puppeteer and node to run the express server. This was a group project so 
+people had worked on the app before I got to work on it. When I built the image for the first time, I had prior experience with javascript images being huge because
+of node modules. But the base image, that I started working with, was a whopping **4.21 GB**! 
+
+So, stretched my arms, cracked my knuckles and got to work. 
+
+## Step 1: Removing Chrome
+Chrome and puppeteer were a part of the image to faciliate web-scraping for real time web search functionality in the chatbot. Well that was a complete overkill,
+gemini's API itself provides web search functionality as a feature, rendering all of this useless.
+```Dockerfile
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+    && apt update \
+    && apt install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-khmeros fonts-kacst fonts-freefont-ttf libxss1 \
+      --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+```
+Getting rid of the chrome installation itself reduced the image down to **3.87 GB**
+
+
+## Step 2: Unnecessary Dependencies
+```Dockerfile
+RUN apt update && apt install -y \
+    curl \
+    ca-certificates \
+    git \
+    nginx \
+    gettext-base \  
+    wget \
+    gnupg \
+    && rm -rf /var/lib/apt/lists/*
+```
+Now amongst all of these,
+- `git`: There were no node-modules packages that weren't from the npm registry and had to be built from github.
+- `wget`, `gnupg`: Well the chrome install wasn't needed so these two were of no use anymore.
+- `curl`: Needed curl to install nginx uninstalled it afterwards.
+
+After a little bit of cleaning up here, the image was down to **3.79 GB**.
+
+## Step 3: Unnecessary Copies
+This was sending off alarms in my head. The build process was part of the docker image i.e why the entire directory was copied in there. At first, I decided to 
+do the build process locally and just copy the build from `/dist` into the container (Yes i know what you're thinking I fixed it later.). 
+```Dockerfile
+COPY . .
+npm run build
+```
+Now, instead of copying everything I simply added the necessary files/folders for deployment in the container.
+```Dockerfile
+COPY .env ./ 
+COPY dist ./dist
+COPY backend ./backend
+COPY nginx.conf /etc/nginx/nginx.conf
+```
+
+Simply copying the bare minimum instead of all the files over lead to the image being **2.86 GB**. This jump really surprised me. 
+
+## Step 4: Unnecessary node-modules
+As I had mentioned, the codebase had gone through many revisions, and prototyping. So having node-modules that were not used anywhere was a common
+occurence. Manually finding these packages would've been a headache, I knew there would be a solution for this. 
+Turns out there's this thing called [depcheck](https://github.com/depcheck/depcheck) (which is now under maintainence, they now suggest using [knip](https://github.com/webpro-nl/knip)).
+
+Running depcheck gave me this, a list of packages that were potentially used nowhere. I still
+went through the codebase grepping, seeing if these were safe to remove.
+  ```
+    * @firebasegen/default-connector 
+    * @langchain/google-genai 
+    * body-parser 
+    * cheerio 
+    * cookie-session 
+    * css-select 
+    * dompurify 
+    * firebase 
+    * jsdom 
+    * langchain 
+    * marked 
+    * mime 
+    * nodemailer 
+    * nodemon 
+    * path 
+    * process 
+    * puppeteer 
+    * react-markdown 
+    * react-syntax-highlighter 
+    * react-tooltip 
+    * rehype-raw 
+    * remark-gfm 
+    * sanitize-html 
+  ```
+Common reasons for these unused packages were: 
+  - Used once for prototyping, later not used in the actual feature.
+  - Some packages were now natively a part of express and even node.
+  - Simplifying features, such that they didn't require certain packages anymore.
+
+Getting rid of these unused packages reduced the image size further to **1.43 GB**.
+
+## Step 4: Installing only production dependencies
+Right now, all the node modules were being installed. Even the `devDependencies` like vite, tailwindcss which were anyway getting bundled into the frontend build. 
+```Dockerfile
+RUN npm install
+```
+To prevent this and only install the required libraries for the express server, there's a special command
+```Dockerfile
+COPY package.json package-lock.json ./ 
+
+# command for older npm versions
+RUN npm install --only=production 
+
+# new command
+RUN npm ci --omit=dev 
+```
+Also there's a clarification, the project is a monorepo format where `package.json` for frontend and backend are housed in the same file. The `ci` command quickens
+things up by looking at `package-lock.json` to install specific versions (preventing lookups and potential version dependency mismatches), and the `--omit=dev` flag installs the packages necessary for production only.
+
+Now the image had reduced down to **1.03 GB**.
+
+## Step 5: Multistage and base image optimization
+Building the frontend locally, and copying it into the image is not the best idea. Instead, I used a multistage build, where the frontend was built in one stage and the actual
+deployment happened in another. Also, the base image previously used was `ubuntu:20.04` and was manually downloading and installing both node and nginx. Instead, I
+went for a slimmer `node:20-alpine` image. Installed bash and nginx in the runner, and got the image built.
+
+With all these optimizations the image was now shrinked down to **690 MB**.
+
+## Step 6: Bonus (Noticed while writing this)
+The `depcheck` output included packages like `remark`, `react-markdown` which are frontend packages. The entire point of building the frontend is that it is static. It
+contains all the required dependencies within. The monorepo structure however disrespects this and still installs these packages. The fix here was simple, moving
+the frontend-only packages into `devDependencies` within my package.json. Now `npm ci --omit=dev` only installed necessary packages required to run the express server. 
+
+This exactly why I should be writing more, I would've never thought of this if I wasn't documenting this process. The image is now down to **405 MB**.
+
+## Practical Difference
+Build time is what led me down this rabbit hole of optimization, Here's how it looked before,
+<img src="/rajnikam/shrink_docker_image_10x/old_build_time.png"></img>
+Here's how it looked after,
+<img src="/rajnikam/shrink_docker_image_10x/new_build_time.png"></img>
+That is almost a **13.6x** faster build time!
+<img src="/rajnikam/shrink_docker_image_10x/size_comparison.png"></img>
+The older image is also **10.6x** the size of the optimized image!
+
+With smaller images and faster build times:
+- CI/CD pipelines are faster & cheaper
+- You get to develop and test quickly (oh trust me on this one)
+- Deployments are quicker and safer
+
+### References
+- [depcheck](https://github.com/depcheck/depcheck): For checking unused dependencies in js/ts projects (archived, check out knip).
+- [knip](https://github.com/webpro-nl/knip): Newer and maintained utility for checking unused dependencies in js/ts projects.

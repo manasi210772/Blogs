@@ -1,0 +1,127 @@
+:root {
+  --prism-bg: #eceff4;
+  --prism-text: #2e3440;
+  --prism-comment: #81a1c1;
+  --prism-keyword: #5e81ac;
+  --prism-string: #a3be8c;
+  --prism-function: #bf616a;
+  --prism-number: #d08770;
+  --prism-operator: #b48ead;
+
+  --scrollbar-track: #e5e9f0;
+  --scrollbar-thumb: #d8dee9;
+  --scrollbar-thumb-hover: #a0aec0;
+}
+
+.dark {
+  /* Rosé Pine (Dark) */
+  --prism-bg: #191724;
+  --prism-text: #e0def4;
+  --prism-comment: #6e6a86;
+  --prism-keyword: #c4a7e7;
+  --prism-string: #9ccfd8;
+  --prism-function: #eb6f92;
+  --prism-number: #f6c177;
+  --prism-operator: #31748f;
+
+  /* Scrollbar vars (dark mode) */
+  --scrollbar-track: #1f1d2e;
+  --scrollbar-thumb: #44415a;
+  --scrollbar-thumb-hover: #6e6a86;
+}
+
+/* Override Prism styles */
+code,
+pre {
+  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro",
+    "Cascadia Code", "Menlo", "Consolas", "Liberation Mono", monospace;
+  background: var(--prism-bg) !important;
+  color: var(--prism-text) !important;
+  font-size: 0.8rem;
+}
+pre {
+  padding: 1em !important;
+  margin: 1em 0 !important;
+  overflow: auto !important;
+  border-radius: 0.375rem !important;
+}
+
+code {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem !important;
+  /*border: 0.1rem solid var(--prism-comment);*/
+}
+
+pre code {
+  padding: 0rem;
+  border: 0px;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--prism-comment) !important;
+}
+
+.token.punctuation {
+  color: var(--prism-text) !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--prism-number) !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--prism-string) !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--prism-operator) !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--prism-keyword) !important;
+}
+
+.token.function,
+.token.class-name {
+  color: var(--prism-function) !important;
+}
+
+pre::-webkit-scrollbar {
+  height: 8px; /* horizontal scrollbar height */
+  width: 8px; /* vertical scrollbar width */
+}
+pre::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+} /* Firefox support */
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
