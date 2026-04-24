@@ -7,7 +7,7 @@ const Blogs = () => {
         What would you like to explore?
       </h2>
 
-      <div className="flex gap-10 mt-6">
+      <div className="grid grid-cols-2 gap-10 mt-6">
         <Link
           to="/blogs/travel"
           className="px-10 py-6 bg-secondary text-white rounded-xl shadow-md hover:scale-105 transition duration-300"
@@ -20,6 +20,20 @@ const Blogs = () => {
           className="px-10 py-6 bg-secondary text-white rounded-xl shadow-md hover:scale-105 transition duration-300"
         >
           🍽 Food Blogs
+        </Link>
+
+        <Link
+          to="/blogs/craft"
+          className="px-10 py-6 bg-secondary text-white rounded-xl shadow-md hover:scale-105 transition duration-300"
+        >
+          🛠 Craft Blogs
+        </Link>
+
+        <Link
+          to="/blogs/personal"
+          className="px-10 py-6 bg-secondary text-white rounded-xl shadow-md hover:scale-105 transition duration-300"
+        >
+          📖 Personal Blogs
         </Link>
       </div>
     </div>

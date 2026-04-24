@@ -67,10 +67,10 @@ const Footer: React.FC = () => {
         </a>
         {/* Kaggle */}
         <a
-          className="text-sm text-gray-500 dark:text-gray-400 transition dark:hover:text-gray-300 hover:text-gray-900"
+          className="text-sm text-gray-500 dark:text-gray-400 transition dark:hover:text-gray-300 hover:text-gray-900 -ml-4"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.kaggle.com/nickuhm"
+          href="https://www.kaggle.com/manasi210772"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

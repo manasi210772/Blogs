@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import TravelBlogs from "./pages/TravelBlogs";
 import FoodBlogs from "./pages/FoodBlogs";
+import CraftBlogs from "./pages/CraftBlogs";
+import GiftCartBlog from "./pages/GiftCartBlog";
+import PersonalBlogs from "./pages/PersonalBlogs";
 
 const App = () => {
   return (
@@ -20,6 +23,9 @@ const App = () => {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/travel" element={<TravelBlogs />} />
           <Route path="/blogs/food" element={<FoodBlogs />} />
+          <Route path="/blogs/craft" element={<CraftBlogs />} />
+          <Route path="/blogs/craft/giftcart" element={<GiftCartBlog />} />
+          <Route path="/blogs/personal" element={<PersonalBlogs />} />
         </Routes>
 
         <Footer />
