@@ -10,6 +10,7 @@ import FoodBlogs from "./pages/FoodBlogs";
 import CraftBlogs from "./pages/CraftBlogs";
 import GiftCartBlog from "./pages/GiftCartBlog";
 import PersonalBlogs from "./pages/PersonalBlogs";
+import PersonalVivaBlog from "./pages/PersonalVivaBlog";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/blogs/craft" element={<CraftBlogs />} />
           <Route path="/blogs/craft/giftcart" element={<GiftCartBlog />} />
           <Route path="/blogs/personal" element={<PersonalBlogs />} />
+          <Route path="/blogs/personal/viva" element={<PersonalVivaBlog />} />
         </Routes>
 
         <Footer />
