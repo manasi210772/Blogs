@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
-    "@mdx-js/rollup": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.1",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-popover": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
@@ -24,6 +24,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "rehype-prism-plus": "^2.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
