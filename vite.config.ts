@@ -5,6 +5,8 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 export default defineConfig({
+  base: '/Blogs/', 
+
   plugins: [
     react(),
     mdx({
