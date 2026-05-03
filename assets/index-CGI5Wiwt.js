@@ -48,7 +48,7 @@ For better support, I `,c.jsx(i.strong,{children:"stuck two skewers together"}),
 `,c.jsx("br",{}),`
 `,c.jsx(i.h2,{children:"Final Look"}),`
 `,c.jsx(i.p,{children:"Here’s how the cart looks once it’s ready:"}),`
-`,c.jsx("div",{className:"flex justify-center my-6",children:c.jsx("img",{src:"/Media/cart-empty.jpeg",alt:"DIY Gift Cart without goodies",className:"rounded-2xl shadow-md"})}),`
+`,c.jsx("div",{className:"flex justify-center my-6",children:c.jsx("img",{src:"/Blogs/Media/cart-empty.jpeg",alt:"DIY Gift Cart without goodies",className:"rounded-2xl shadow-md"})}),`
 `,c.jsx("p",{className:"text-center text-sm text-gray-500",children:c.jsx(i.p,{children:"The cart design"})}),`
 `,c.jsx("br",{}),`
 `,c.jsx(i.p,{children:"Now comes the best part—filling it up!"}),`
@@ -60,7 +60,7 @@ For better support, I `,c.jsx(i.strong,{children:"stuck two skewers together"}),
 `,c.jsx(i.li,{children:"Anything your loved one would enjoy"}),`
 `]}),`
 `,c.jsx("br",{}),`
-`,c.jsx("div",{className:"flex justify-center my-6",children:c.jsx("img",{src:"/Media/cart-with-goodies.jpeg",alt:"DIY Gift Cart with goodies",className:"rounded-2xl shadow-md"})}),`
+`,c.jsx("div",{className:"flex justify-center my-6",children:c.jsx("img",{src:"/Blogs/Media/cart-with-goodies.jpeg",alt:"DIY Gift Cart with goodies",className:"rounded-2xl shadow-md"})}),`
 `,c.jsx("p",{className:"text-center text-sm text-gray-500",children:c.jsx(i.p,{children:"Fully loaded gift cart ready to surprise someone!"})}),`
 `,c.jsx("br",{}),`
 `,c.jsx(i.h2,{children:"Final Thoughts"}),`
@@ -184,4 +184,4 @@ Sometimes, it’s just:`}),`
 `]}),`
 `,c.jsx(i.p,{children:"And somehow… that’s enough"}),`
 `,c.jsx("br",{}),`
-`,c.jsxs("video",{width:"100%",height:"auto",controls:!0,children:[c.jsx("source",{src:"/Media/sugarcane.mp4",type:"video/mp4"}),c.jsx(i.p,{children:"Your browser does not support the video tag."})]})]})}function qh(s={}){const{wrapper:i}=s.components||{};return i?c.jsx(i,{...s,children:c.jsx(zc,{...s})}):zc(s)}const em=()=>c.jsx("div",{className:"prose prose-stone max-w-none dark:prose-invert",children:c.jsx(qh,{})}),tm=()=>c.jsx("div",{className:"text-text bg-background flex justify-center items-center",children:c.jsxs("main",{className:"min-h-screen w-10/12 md:w-3/5 md:m-10 lg:m-0 xl:w-2/5 flex justify-center items-start flex-col gap-5 text-justify",children:[c.jsx(Wh,{}),c.jsxs(Xp,{children:[c.jsx(Ct,{path:"/",element:c.jsx(Hh,{})}),c.jsx(Ct,{path:"/blogs",element:c.jsx($h,{})}),c.jsx(Ct,{path:"/blogs/travel",element:c.jsx(Qh,{})}),c.jsx(Ct,{path:"/blogs/food",element:c.jsx(Gh,{})}),c.jsx(Ct,{path:"/blogs/food/sugarcane",element:c.jsx(em,{})}),c.jsx(Ct,{path:"/blogs/craft",element:c.jsx(Kh,{})}),c.jsx(Ct,{path:"/blogs/craft/giftcart",element:c.jsx(bh,{})}),c.jsx(Ct,{path:"/blogs/personal",element:c.jsx(Xh,{})}),c.jsx(Ct,{path:"/blogs/personal/viva",element:c.jsx(Zh,{})})]}),c.jsx(Vh,{})]})});op.createRoot(document.getElementById("root")).render(c.jsx(Ic.StrictMode,{children:c.jsx(lh,{children:c.jsx(tm,{})})}));
+`,c.jsxs("video",{width:"100%",height:"auto",controls:!0,children:[c.jsx("source",{src:"/Blogs/Media/sugarcane.mp4",type:"video/mp4"}),c.jsx(i.p,{children:"Your browser does not support the video tag."})]})]})}function qh(s={}){const{wrapper:i}=s.components||{};return i?c.jsx(i,{...s,children:c.jsx(zc,{...s})}):zc(s)}const em=()=>c.jsx("div",{className:"prose prose-stone max-w-none dark:prose-invert",children:c.jsx(qh,{})}),tm=()=>c.jsx("div",{className:"text-text bg-background flex justify-center items-center",children:c.jsxs("main",{className:"min-h-screen w-10/12 md:w-3/5 md:m-10 lg:m-0 xl:w-2/5 flex justify-center items-start flex-col gap-5 text-justify",children:[c.jsx(Wh,{}),c.jsxs(Xp,{children:[c.jsx(Ct,{path:"/",element:c.jsx(Hh,{})}),c.jsx(Ct,{path:"/blogs",element:c.jsx($h,{})}),c.jsx(Ct,{path:"/blogs/travel",element:c.jsx(Qh,{})}),c.jsx(Ct,{path:"/blogs/food",element:c.jsx(Gh,{})}),c.jsx(Ct,{path:"/blogs/food/sugarcane",element:c.jsx(em,{})}),c.jsx(Ct,{path:"/blogs/craft",element:c.jsx(Kh,{})}),c.jsx(Ct,{path:"/blogs/craft/giftcart",element:c.jsx(bh,{})}),c.jsx(Ct,{path:"/blogs/personal",element:c.jsx(Xh,{})}),c.jsx(Ct,{path:"/blogs/personal/viva",element:c.jsx(Zh,{})})]}),c.jsx(Vh,{})]})});op.createRoot(document.getElementById("root")).render(c.jsx(Ic.StrictMode,{children:c.jsx(lh,{children:c.jsx(tm,{})})}));
