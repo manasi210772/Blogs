@@ -12,6 +12,7 @@ import GiftCartBlog from "./pages/GiftCartBlog";
 import PersonalBlogs from "./pages/PersonalBlogs";
 import PersonalVivaBlog from "./pages/PersonalVivaBlog";
 import SugarcaneBlog from "./pages/SugarcaneBlog";
+import OraBlog from "./pages/OraBlog";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/blogs/travel" element={<TravelBlogs />} />
           <Route path="/blogs/food" element={<FoodBlogs />} />
           <Route path="/blogs/food/sugarcane" element={<SugarcaneBlog />} />
+          <Route path="/blogs/food/ora" element={<OraBlog />} />
           <Route path="/blogs/craft" element={<CraftBlogs />} />
           <Route path="/blogs/craft/giftcart" element={<GiftCartBlog />} />
           <Route path="/blogs/personal" element={<PersonalBlogs />} />
