@@ -62,6 +62,19 @@ const FoodBlogs = () => {
                 </div>
               </Link>
             </li>
+            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
+              <Link to="maiz" className="block">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">A Taste of Nostalgia: My Maiz Mexican Food Experience</h3>
+                    <p className="mt-1 text-sm text-gray-400">
+                      A comforting Mexican meal from Maiz that brought back memories of my first Chipotle experience eight years ago.
+                    </p>
+                  </div>
+                  <span className="text-[#3ddad7] text-sm">Read →</span>
+                </div>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
