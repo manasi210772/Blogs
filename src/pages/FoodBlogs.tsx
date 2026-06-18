@@ -63,6 +63,19 @@ const FoodBlogs = () => {
               </Link>
             </li>
             <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
+              <Link to="bluetokai" className="block">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">My First Visit to Blue Tokai: Coffee, Conversations & a Korean Bun</h3>
+                    <p className="mt-1 text-sm text-gray-400">
+                      A first-time experience at Blue Tokai Coffee Roasters, featuring a comforting hot mocha and a flavorful Jalapeño & Cheese Korean Bun.
+                    </p>
+                  </div>
+                  <span className="text-[#3ddad7] text-sm">Read →</span>
+                </div>
+              </Link>
+            </li>
+            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
               <Link to="maiz" className="block">
                 <div className="flex items-center justify-between gap-4">
                   <div>
