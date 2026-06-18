@@ -2,22 +2,15 @@ const Home = () => {
   return (
     <>
       <div>
-        I am an engineering student who is passionate about learning, creating, and exploring beyond the 
-        classroom. While I enjoy building and working on technology, I believe that real-life experiences 
-        inspire the most meaningful stories.
+        Food and I go way back. While some people keep travel journals, I keep mental notes of unforgettable meals, hidden café gems, and desserts that deserve a standing ovation. Whether I'm exploring a cozy restaurant, trying a new cuisine, or ordering comfort food at home, I'm always chasing my next great bite.
       </div>
 
       <div>
-        I have a strong interest in food and travel, including discovering new restaurants, exploring different 
-        cuisines, and visiting new places. I also enjoy crafting as a creative hobby, where I love making handmade 
-        pieces that add a personal touch to everyday moments.
+        This website is my little corner of the internet where I document my food adventures. Here, you'll find my thoughts on restaurant ambience, café vibes, the dishes I ordered, honest ratings, and the occasional food photo that survived long enough before I attacked the plate. From cheesy appetizers and hearty main courses to desserts that make me forget all my responsibilities, every review comes from genuine foodie excitement.
       </div>
 
       <div>
-        Through this blog, I share my food experiences, travel journeys, and creative projects where curiosity 
-        meets creativity. Through my writing, I hope to document authentic experiences, thoughtful reflections, 
-        and memorable moments. This space is a collection of stories, insights, and discoveries from the places I 
-        explore, the flavors I experience, and the things I create.
+        Fueled by countless episodes of MasterChef Australia, inspired by Nick DiGiovanni, and driven by an endless curiosity for good food, I'm always looking for something new to taste. So pull up a chair, grab a snack, and join me as I spill the beans and take life one bite at a time.
       </div>
     </>
   );

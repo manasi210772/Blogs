@@ -4,13 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import TravelBlogs from "./pages/TravelBlogs";
 import FoodBlogs from "./pages/FoodBlogs";
-import CraftBlogs from "./pages/CraftBlogs";
-import GiftCartBlog from "./pages/GiftCartBlog";
-import PersonalBlogs from "./pages/PersonalBlogs";
-import PersonalVivaBlog from "./pages/PersonalVivaBlog";
 import SugarcaneBlog from "./pages/SugarcaneBlog";
 import ManasjatraBlog from "./pages/Manasjatra";
 import OraBlog from "./pages/OraBlog";
@@ -26,18 +20,12 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blogs/travel" element={<TravelBlogs />} />
           <Route path="/blogs/food" element={<FoodBlogs />} />
           <Route path="/blogs/food/sugarcane" element={<SugarcaneBlog />} />
           <Route path="/blogs/food/manasjatra" element={<ManasjatraBlog />} />
           <Route path="/blogs/food/ora" element={<OraBlog />} />
           <Route path="/blogs/food/maiz" element={<MaizBlog />} />
           <Route path="/blogs/food/bluetokai" element={<BluetokaiBlogs />} />
-          <Route path="/blogs/craft" element={<CraftBlogs />} />
-          <Route path="/blogs/craft/giftcart" element={<GiftCartBlog />} />
-          <Route path="/blogs/personal" element={<PersonalBlogs />} />
-          <Route path="/blogs/personal/viva" element={<PersonalVivaBlog />} />
         </Routes>
 
         <Footer />
