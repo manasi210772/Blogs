@@ -4,7 +4,7 @@ const PersonalBlogs = () => {
   return (
     <div className="mt-20 px-6">
       <div className="text-center max-w-2xl mx-auto">
-        <h1 className="text-4xl font-semibold tracking-wide text-gray-100">
+        <h1 className="text-4xl font-semibold tracking-wide text-text">
           Personal Blogs 📖
         </h1>
         <p className="mt-3 text-gray-400 text-base">
@@ -14,9 +14,9 @@ const PersonalBlogs = () => {
       </div>
 
       <div className="mt-14 max-w-3xl mx-auto">
-        <div className="rounded-3xl border border-gray-800 bg-[#0f1f1f]/80 p-6">
-          <h2 className="text-2xl font-semibold text-gray-100">Index</h2>
-          <p className="mt-2 text-gray-400">
+        <div className="rounded-3xl border border-gray-300 dark:border-gray-800 bg-gray-100 dark:bg-[#0f1f1f]/80 p-6">
+          <h2 className="text-2xl font-semibold text-text dark:text-gray-100">Index</h2>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
             Click a title to open the corresponding personal blog.
           </p>
 

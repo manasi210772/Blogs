@@ -22,7 +22,7 @@ const Header = () => {
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle blog navigation"
             aria-expanded={menuOpen}
-            className="rounded-2xl border border-gray-700 bg-[#0f1f1f]/80 p-2 text-primary transition hover:border-[#3ddad7] hover:bg-[#11212b]"
+            className="rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-[#0f1f1f]/80 p-2 text-primary transition hover:border-[#3ddad7] hover:bg-gray-200 dark:hover:bg-[#11212b]"
           >
             <svg viewBox="0 0 24 24" className="h-6 w-6">
               <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -36,7 +36,7 @@ const Header = () => {
       </div>
 
       {menuOpen && (
-        <div className="absolute left-0 top-full z-20 mt-3 w-full max-w-sm rounded-3xl border border-gray-800 bg-[#0f1f1f]/95 p-4 shadow-2xl">
+        <div className="absolute left-0 top-full z-20 mt-3 w-full max-w-sm rounded-3xl border border-gray-300 dark:border-gray-800 bg-gray-50 dark:bg-[#0f1f1f]/95 p-4 shadow-2xl">
           <div className="flex flex-col gap-3 text-sm">
             <NavLink
               to="/blogs/food"
@@ -46,7 +46,7 @@ const Header = () => {
                   clsx(
                     isActive && "underline underline-offset-4 text-accent"
                   ),
-                  "block rounded-2xl px-4 py-3 hover:bg-[#11212b] transition"
+                  "block rounded-2xl px-4 py-3 text-text dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-[#11212b] transition"
                 )
               }
             >
@@ -60,7 +60,7 @@ const Header = () => {
                   clsx(
                     isActive && "underline underline-offset-4 text-accent"
                   ),
-                  "block rounded-2xl px-4 py-3 hover:bg-[#11212b] transition"
+                  "block rounded-2xl px-4 py-3 text-text dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-[#11212b] transition"
                 )
               }
             >
@@ -74,7 +74,7 @@ const Header = () => {
                   clsx(
                     isActive && "underline underline-offset-4 text-accent"
                   ),
-                  "block rounded-2xl px-4 py-3 hover:bg-[#11212b] transition"
+                  "block rounded-2xl px-4 py-3 text-text dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-[#11212b] transition"
                 )
               }
             >
@@ -88,7 +88,7 @@ const Header = () => {
                   clsx(
                     isActive && "underline underline-offset-4 text-accent"
                   ),
-                  "block rounded-2xl px-4 py-3 hover:bg-[#11212b] transition"
+                  "block rounded-2xl px-4 py-3 text-text dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-[#11212b] transition"
                 )
               }
             >
