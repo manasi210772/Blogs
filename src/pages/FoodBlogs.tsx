@@ -24,12 +24,12 @@ const FoodBlogs = () => {
 
           <ul className="mt-6 space-y-4">
             <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="sugarcane" className="block">
+              <Link to="pizzaexpress" className="block">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">That ₹20 Sugarcane Juice That Saved a Summer Evening</h3>
+                    <h3 className="text-xl font-semibold text-white">A Pizza Night That Didn't Go According to Plan</h3>
                     <p className="mt-1 text-sm text-gray-400">
-                      A simple glass of sugarcane juice at Thane station that turned a hot, exhausting evening into something refreshing and memorable.
+                      What started as an Oven Story Pizza craving ended with a late-night PizzaExpress feast and a few pleasant surprises.
                     </p>
                   </div>
                   <span className="text-[#3ddad7] text-sm">Read →</span>
@@ -37,25 +37,12 @@ const FoodBlogs = () => {
               </Link>
             </li>
             <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="manasjatra" className="block">
+              <Link to="chimichurri" className="block">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">Mini Mutton Thali at Manas Jatra: Filling, Flavorful & A Bit Overwhelming</h3>
+                    <h3 className="text-xl font-semibold text-white">My First Dimsum & Ramen Experience at Chimichurri – The Asian Kitchen</h3>
                     <p className="mt-1 text-sm text-gray-400">
-                      A hearty mini mutton thali experience at Manas Jatra in Satara—packed with flavors, but a little too filling to enjoy it all.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="ora" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">Ora Kitchen & Bar: A Night of Flavors, Chaos & Mixed Impressions</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A detailed dining experience at Ora Kitchen & Bar—from long waits to flavorful dishes and a few unexpected surprises.
+                      A memorable first-time tasting of dimsum, ramen, and tofu at Chimichurri – The Asian Kitchen.
                     </p>
                   </div>
                   <span className="text-[#3ddad7] text-sm">Read →</span>
@@ -89,12 +76,38 @@ const FoodBlogs = () => {
               </Link>
             </li>
             <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="chimichurri" className="block">
+              <Link to="ora" className="block">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white">My First Dimsum & Ramen Experience at Chimichurri – The Asian Kitchen</h3>
+                    <h3 className="text-xl font-semibold text-white">Ora Kitchen & Bar: A Night of Flavors, Chaos & Mixed Impressions</h3>
                     <p className="mt-1 text-sm text-gray-400">
-                      A memorable first-time tasting of dimsum, ramen, and tofu at Chimichurri – The Asian Kitchen.
+                      A detailed dining experience at Ora Kitchen & Bar—from long waits to flavorful dishes and a few unexpected surprises.
+                    </p>
+                  </div>
+                  <span className="text-[#3ddad7] text-sm">Read →</span>
+                </div>
+              </Link>
+            </li>
+            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
+              <Link to="manasjatra" className="block">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Mini Mutton Thali at Manas Jatra: Filling, Flavorful & A Bit Overwhelming</h3>
+                    <p className="mt-1 text-sm text-gray-400">
+                      A hearty mini mutton thali experience at Manas Jatra in Satara—packed with flavors, but a little too filling to enjoy it all.
+                    </p>
+                  </div>
+                  <span className="text-[#3ddad7] text-sm">Read →</span>
+                </div>
+              </Link>
+            </li>
+            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
+              <Link to="sugarcane" className="block">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">That ₹20 Sugarcane Juice That Saved a Summer Evening</h3>
+                    <p className="mt-1 text-sm text-gray-400">
+                      A simple glass of sugarcane juice at Thane station that turned a hot, exhausting evening into something refreshing and memorable.
                     </p>
                   </div>
                   <span className="text-[#3ddad7] text-sm">Read →</span>

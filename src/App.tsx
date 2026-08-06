@@ -11,6 +11,7 @@ import OraBlog from "./pages/OraBlog";
 import MaizBlog from "./pages/MaizBlog";
 import BluetokaiBlogs from "./pages/BluetokaiBlogs";
 import ChimichurriBlog from "./pages/ChimichurriBlog";
+import PizzaExpressBlog from "./pages/PizzaExpressBlog";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/blogs/food/maiz" element={<MaizBlog />} />
           <Route path="/blogs/food/bluetokai" element={<BluetokaiBlogs />} />
           <Route path="/blogs/food/chimichurri" element={<ChimichurriBlog />} />
+          <Route path="/blogs/food/pizzaexpress" element={<PizzaExpressBlog />} />
           <Route path="*" element={<Home />} />
         </Routes>
 
