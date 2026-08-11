@@ -12,11 +12,14 @@ import MaizBlog from "./pages/MaizBlog";
 import BluetokaiBlogs from "./pages/BluetokaiBlogs";
 import ChimichurriBlog from "./pages/ChimichurriBlog";
 import PizzaExpressBlog from "./pages/PizzaExpressBlog";
+import FoodPatternBackground from "./components/FoodPatternBackground";
 
 const App = () => {
   return (
-    <div className="text-text bg-background flex justify-center items-center">
-      <main className="min-h-screen w-10/12 md:w-3/5 md:m-10 lg:m-0 xl:w-2/5 flex justify-center items-start flex-col gap-5 text-justify">
+    <div className="relative text-text bg-background flex justify-center items-center">
+      <FoodPatternBackground />
+
+      <main className="relative z-10 min-h-screen w-11/12 sm:w-5/6 md:w-4/5 lg:w-3/4 xl:max-w-3xl 2xl:max-w-4xl mx-auto flex justify-center items-start flex-col gap-6 text-justify px-2">
 
         <Header />
 
