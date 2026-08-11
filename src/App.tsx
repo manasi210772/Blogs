@@ -11,6 +11,7 @@ import OraBlog from "./pages/OraBlog";
 import MaizBlog from "./pages/MaizBlog";
 import BluetokaiBlogs from "./pages/BluetokaiBlogs";
 import ChimichurriBlog from "./pages/ChimichurriBlog";
+import Chimichurri2Blog from "./pages/Chimichurri2Blog";
 import PizzaExpressBlog from "./pages/PizzaExpressBlog";
 import FoodPatternBackground from "./components/FoodPatternBackground";
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/blogs/food/maiz" element={<MaizBlog />} />
           <Route path="/blogs/food/bluetokai" element={<BluetokaiBlogs />} />
           <Route path="/blogs/food/chimichurri" element={<ChimichurriBlog />} />
+          <Route path="/blogs/food/chimichurri-2" element={<Chimichurri2Blog />} />
           <Route path="/blogs/food/pizzaexpress" element={<PizzaExpressBlog />} />
           <Route path="*" element={<Home />} />
         </Routes>

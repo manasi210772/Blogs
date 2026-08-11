@@ -24,6 +24,19 @@ const FoodBlogs = () => {
 
           <ul className="mt-6 space-y-4">
             <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
+              <Link to="chimichurri-2" className="block">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Back to Chimichurri – A Second Asian Food Adventure</h3>
+                    <p className="mt-1 text-sm text-gray-400">
+                      A second visit to Chimichurri featuring crab stick soup, Thai curry, satay, and fried rice.
+                    </p>
+                  </div>
+                  <span className="text-[#3ddad7] text-sm">Read →</span>
+                </div>
+              </Link>
+            </li>
+            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
               <Link to="pizzaexpress" className="block">
                 <div className="flex items-center justify-between gap-4">
                   <div>
