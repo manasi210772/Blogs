@@ -17,13 +17,13 @@ import FoodPatternBackground from "./components/FoodPatternBackground";
 
 const App = () => {
   return (
-    <div className="relative text-text bg-background flex justify-center items-center">
+    <div className="relative min-h-screen text-text bg-background">
       <FoodPatternBackground />
 
-      <main className="relative z-10 min-h-screen w-11/12 sm:w-5/6 md:w-4/5 lg:w-3/4 xl:max-w-3xl 2xl:max-w-4xl mx-auto flex justify-center items-start flex-col gap-6 text-justify px-2">
+      {/* Sticky header — full-width, outside constrained main */}
+      <Header />
 
-        <Header />
-
+      <main className="relative z-10 w-11/12 sm:w-5/6 md:w-4/5 lg:w-3/4 xl:max-w-3xl 2xl:max-w-4xl mx-auto flex flex-col gap-6 px-2 pb-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs/food" element={<FoodBlogs />} />

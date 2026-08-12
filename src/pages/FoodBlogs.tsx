@@ -1,136 +1,113 @@
 import { Link } from "react-router-dom";
+import { ArrowRight, BookOpen } from "lucide-react";
+import { blogPosts } from "../data/blogPosts";
+
+const formatDate = (dateStr: string) => {
+  return new Date(dateStr).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
 
 const FoodBlogs = () => {
   return (
-    <div className="mt-20 px-6">
+    <div className="pt-10 pb-4">
 
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto">
-        <h1 className="text-4xl font-semibold tracking-wide text-text">
-          Food Blogs 🍽️
-        </h1>
-        <p className="mt-3 text-gray-400 text-base">
-          Delicious stories and culinary adventures. <br />
+      {/* ── Page Header ── */}
+      <div className="text-center max-w-xl mx-auto mb-10 animate-fade-in-up">
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <h1 className="text-4xl font-bold text-text tracking-tight">
+            Food Blogs
+          </h1>
+          <span className="text-3xl">🍽️</span>
+        </div>
+        <p className="text-muted-foreground text-base leading-relaxed">
+          Delicious stories and culinary adventures.{" "}
+          <br className="hidden sm:block" />
           Explore my food experiences and recipes.
         </p>
-      </div>
-
-      <div className="mt-14 max-w-3xl mx-auto">
-        <div className="rounded-3xl border border-gray-300 dark:border-gray-800 bg-gray-100 dark:bg-[#0f1f1f]/80 p-6">
-          <h2 className="text-2xl font-semibold text-text dark:text-gray-100">Index</h2>
-          <p className="mt-2 text-gray-600 dark:text-gray-400">
-            Click a title to open the corresponding food blog.
-          </p>
-
-          <ul className="mt-6 space-y-4">
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="chimichurri-2" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">Back to Chimichurri – A Second Asian Food Adventure</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A second visit to Chimichurri featuring crab stick soup, Thai curry, satay, and fried rice.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="pizzaexpress" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">A Pizza Night That Didn't Go According to Plan</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      What started as an Oven Story Pizza craving ended with a late-night PizzaExpress feast and a few pleasant surprises.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="chimichurri" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">My First Dimsum & Ramen Experience at Chimichurri – The Asian Kitchen</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A memorable first-time tasting of dimsum, ramen, and tofu at Chimichurri – The Asian Kitchen.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="bluetokai" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">My First Visit to Blue Tokai: Coffee, Conversations & a Korean Bun</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A first-time experience at Blue Tokai Coffee Roasters, featuring a comforting hot mocha and a flavorful Jalapeño & Cheese Korean Bun.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="maiz" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">A Taste of Nostalgia: My Maiz Mexican Food Experience</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A comforting Mexican meal from Maiz that brought back memories of my first Chipotle experience eight years ago.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="ora" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">Ora Kitchen & Bar: A Night of Flavors, Chaos & Mixed Impressions</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A detailed dining experience at Ora Kitchen & Bar—from long waits to flavorful dishes and a few unexpected surprises.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="manasjatra" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">Mini Mutton Thali at Manas Jatra: Filling, Flavorful & A Bit Overwhelming</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A hearty mini mutton thali experience at Manas Jatra in Satara—packed with flavors, but a little too filling to enjoy it all.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-            <li className="rounded-2xl border border-gray-800 bg-[#121d24]/90 p-5 transition hover:border-[#3ddad7] hover:bg-[#11212b]">
-              <Link to="sugarcane" className="block">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">That ₹20 Sugarcane Juice That Saved a Summer Evening</h3>
-                    <p className="mt-1 text-sm text-gray-400">
-                      A simple glass of sugarcane juice at Thane station that turned a hot, exhausting evening into something refreshing and memorable.
-                    </p>
-                  </div>
-                  <span className="text-[#3ddad7] text-sm">Read →</span>
-                </div>
-              </Link>
-            </li>
-          </ul>
+        {/* thin decorative line */}
+        <div className="mt-5 flex items-center gap-3 justify-center">
+          <div className="h-px w-16 bg-border/60" />
+          <span className="text-primary/40 text-sm">✦</span>
+          <div className="h-px w-16 bg-border/60" />
         </div>
       </div>
 
+      {/* ── Blog Index Container ── */}
+      <div className="rounded-3xl border border-border/60 bg-card/50 backdrop-blur-sm p-6 sm:p-8 animate-fade-in-up delay-100">
+        {/* Section label */}
+        <div className="flex items-center gap-2 mb-2">
+          <BookOpen className="w-4 h-4 text-primary" />
+          <h2 className="text-lg font-semibold text-text">Index</h2>
+        </div>
+        <p className="text-muted-foreground text-sm mb-7">
+          Click a title to open the corresponding food blog.
+        </p>
+
+        {/* ── Cards ── */}
+        <ul className="flex flex-col gap-4">
+          {blogPosts.map((post, i) => {
+            const Icon = post.icon;
+            return (
+              <li
+                key={post.slug}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${150 + i * 80}ms` }}
+              >
+                <Link
+                  to={post.slug}
+                  className="group flex items-start gap-4 rounded-2xl border border-border/60 bg-background/50 dark:bg-background/30 backdrop-blur-sm p-5 hover:border-primary/60 hover:bg-card hover:shadow-md transition-all duration-300"
+                >
+                  {/* Left accent bar */}
+                  <div className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full bg-primary/0 group-hover:bg-primary/60 transition-colors duration-300" />
+
+                  {/* Icon bubble */}
+                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary shrink-0 mt-0.5 group-hover:bg-primary/20 transition-colors duration-200">
+                    <Icon className="w-4 h-4" />
+                  </span>
+
+                  {/* Text block */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base font-semibold text-text group-hover:text-primary transition-colors duration-200 leading-snug">
+                          {post.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                          {post.description}
+                        </p>
+                      </div>
+
+                      {/* Read arrow */}
+                      <span className="text-primary text-sm font-medium flex items-center gap-1 shrink-0 group-hover:translate-x-1 transition-transform duration-200">
+                        Read
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+
+                    {/* Meta row: tags + date */}
+                    <div className="flex flex-wrap items-center gap-2 mt-3">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      <span className="text-xs text-muted-foreground ml-auto">
+                        {formatDate(post.date)}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -32,11 +32,39 @@ html {
     /* Text + Background */
     --text: 185 30% 25%;            /* Deep teal text */
     --background: 48 45% 94%;       /* Soft warm cream */
+    --foreground: 185 30% 20%;      /* Slightly darker for contrast */
 
     /* Brand Colors */
     --primary: 174 60% 40%;         /* Teal */
+    --primary-foreground: 48 45% 97%;
     --secondary: 174 40% 60%;       /* Soft aqua */
+    --secondary-foreground: 185 30% 15%;
     --accent: 170 65% 35%;          /* Rich teal accent */
+    --accent-foreground: 48 45% 97%;
+
+    /* Card — slightly off-white, translucent-friendly */
+    --card: 48 40% 90%;
+    --card-foreground: 185 30% 22%;
+
+    /* Muted surfaces */
+    --muted: 48 30% 85%;
+    --muted-foreground: 185 25% 40%;
+
+    /* Popover */
+    --popover: 48 45% 96%;
+    --popover-foreground: 185 30% 20%;
+
+    /* Borders */
+    --border: 174 30% 70%;
+    --input: 174 25% 75%;
+    --ring: 174 60% 40%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
 
     /* Scrollbar (light mode) */
     --scrollbar-track: #f5f1e6;
@@ -48,10 +76,34 @@ html {
     /* Dark Mode Background */
     --text: 170 35% 90%;            /* Soft aqua text */
     --background: 190 30% 10%;      /* Deep ocean teal */
+    --foreground: 170 30% 88%;
 
     --primary: 174 60% 50%;
+    --primary-foreground: 190 30% 8%;
     --secondary: 174 35% 30%;
+    --secondary-foreground: 170 35% 90%;
     --accent: 170 65% 55%;
+    --accent-foreground: 190 30% 8%;
+
+    /* Card — dark translucent */
+    --card: 190 28% 14%;
+    --card-foreground: 170 30% 88%;
+
+    /* Muted surfaces */
+    --muted: 190 25% 18%;
+    --muted-foreground: 170 20% 60%;
+
+    /* Popover */
+    --popover: 190 30% 12%;
+    --popover-foreground: 170 30% 88%;
+
+    /* Borders */
+    --border: 174 25% 22%;
+    --input: 174 20% 20%;
+    --ring: 174 60% 50%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
     /* Scrollbar (dark mode) */
     --scrollbar-track: #0f1f23;
@@ -90,3 +142,14 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
+
+/* Animation delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
