@@ -20,7 +20,7 @@ const FoodBlogs = () => {
           <h1 className="text-4xl font-bold text-text tracking-tight">
             Food Blogs
           </h1>
-          <span className="text-3xl">🍽️</span>
+          <span className="text-3xl"></span>
         </div>
         <p className="text-muted-foreground text-base leading-relaxed">
           Delicious stories and culinary adventures.{" "}
@@ -39,12 +39,10 @@ const FoodBlogs = () => {
       <div className="rounded-3xl border border-border/60 bg-card/50 backdrop-blur-sm p-6 sm:p-8 animate-fade-in-up delay-100">
         {/* Section label */}
         <div className="flex items-center gap-2 mb-2">
-          <BookOpen className="w-4 h-4 text-primary" />
-          <h2 className="text-lg font-semibold text-text">Index</h2>
+          
+          
         </div>
-        <p className="text-muted-foreground text-sm mb-7">
-          Click a title to open the corresponding food blog.
-        </p>
+        
 
         {/* ── Cards ── */}
         <ul className="flex flex-col gap-4">

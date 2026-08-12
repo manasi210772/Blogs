@@ -28,11 +28,7 @@ const Home = () => {
       <section className="flex flex-col items-center text-center gap-6 pt-8 pb-4">
         {/* Floating monogram */}
         <div className="animate-fade-in animate-float">
-          <img
-            src={`${import.meta.env.BASE_URL}Main-Logo.png`}
-            alt="Manasi Patil monogram"
-            className="w-20 h-20 object-contain opacity-80 dark:invert"
-          />
+          
         </div>
 
         {/* Headline */}
@@ -41,9 +37,8 @@ const Home = () => {
             Food &amp; I{" "}
             <span className="text-primary">Go Way Back</span>
           </h1>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-md mx-auto leading-relaxed">
-            Mental notes on unforgettable meals, hidden café gems, and desserts
-            that deserve a standing ovation.
+          <p className="text-muted-foreground text-base sm:text-lg max-w-md mx-auto leading-relaxed text-justify">
+          While some people keep travel journals, I keep mental notes of unforgettable meals, hidden café gems, and desserts that deserve a standing ovation. Whether I'm exploring a cozy restaurant, trying a new cuisine, or ordering comfort food at home, I'm always chasing my next great bite.
           </p>
         </div>
 
