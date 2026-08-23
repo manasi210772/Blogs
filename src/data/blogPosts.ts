@@ -1,22 +1,9 @@
-import {
-  UtensilsCrossed,
-  Coffee,
-  Pizza,
-  Sandwich,
-  Soup,
-  Salad,
-  IceCream,
-  Beef,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
 export interface BlogPost {
   slug: string;
   title: string;
   description: string;
   date: string;
   tags: string[];
-  icon: LucideIcon;
   path: string;
 }
 
@@ -28,7 +15,6 @@ export const blogPosts: BlogPost[] = [
       "A second visit to Chimichurri featuring crab stick soup, Thai curry, satay, and fried rice.",
     date: "2026-08-09",
     tags: ["Asian", "Restaurant"],
-    icon: Soup,
     path: "/blogs/food/chimichurri-2",
   },
   {
@@ -38,7 +24,6 @@ export const blogPosts: BlogPost[] = [
       "What started as an Oven Story Pizza craving ended with a late-night PizzaExpress feast and a few pleasant surprises.",
     date: "2026-08-04",
     tags: ["Italian", "Pizza"],
-    icon: Pizza,
     path: "/blogs/food/pizzaexpress",
   },
   {
@@ -48,17 +33,15 @@ export const blogPosts: BlogPost[] = [
       "A memorable first-time tasting of dimsum, ramen, and tofu at Chimichurri – The Asian Kitchen.",
     date: "2026-07-10",
     tags: ["Asian", "First Time"],
-    icon: UtensilsCrossed,
     path: "/blogs/food/chimichurri",
   },
   {
     slug: "bluetokai",
     title: "My First Visit to Blue Tokai: Coffee, Conversations & a Korean Bun",
     description:
-      "A first-time experience at Blue Tokai Coffee Roasters, featuring a comforting hot mocha and a flavorful Jalapeño & Cheese Korean Bun.",
+      "A first-time experience at Blue Tokai Coffee Roasters, featuring a comforting hot mocha and a flavorful Jalapeno & Cheese Korean Bun.",
     date: "2026-06-12",
-    tags: ["Café", "Coffee"],
-    icon: Coffee,
+    tags: ["Cafe", "Coffee"],
     path: "/blogs/food/bluetokai",
   },
   {
@@ -68,37 +51,33 @@ export const blogPosts: BlogPost[] = [
       "A comforting Mexican meal from Maiz that brought back memories of my first Chipotle experience eight years ago.",
     date: "2026-06-17",
     tags: ["Mexican", "Comfort Food"],
-    icon: Salad,
     path: "/blogs/food/maiz",
   },
   {
     slug: "ora",
     title: "Ora Kitchen & Bar: A Night of Flavors, Chaos & Mixed Impressions",
     description:
-      "A detailed dining experience at Ora Kitchen & Bar—from long waits to flavorful dishes and a few unexpected surprises.",
+      "A detailed dining experience at Ora Kitchen & Bar, from long waits to flavorful dishes and a few unexpected surprises.",
     date: "2026-05-01",
     tags: ["Bar", "Fine Dining"],
-    icon: IceCream,
     path: "/blogs/food/ora",
   },
   {
     slug: "manasjatra",
     title: "Mini Mutton Thali at Manas Jatra: Filling, Flavorful & A Bit Overwhelming",
     description:
-      "A hearty mini mutton thali experience at Manas Jatra in Satara—packed with flavors, but a little too filling to enjoy it all.",
+      "A hearty mini mutton thali experience at Manas Jatra in Satara. Packed with flavors, but a little too filling to enjoy it all.",
     date: "2026-04-28",
     tags: ["Indian", "Thali"],
-    icon: Beef,
     path: "/blogs/food/manasjatra",
   },
   {
     slug: "sugarcane",
-    title: "That ₹20 Sugarcane Juice That Saved a Summer Evening",
+    title: "That Rs.20 Sugarcane Juice That Saved a Summer Evening",
     description:
       "A simple glass of sugarcane juice at Thane station that turned a hot, exhausting evening into something refreshing and memorable.",
     date: "2026-04-21",
     tags: ["Street Food", "Drinks"],
-    icon: Sandwich,
     path: "/blogs/food/sugarcane",
   },
 ];
