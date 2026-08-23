@@ -108,25 +108,23 @@ One thing I particularly enjoyed was the **boiled egg**. Since it sat in the sou
 
 Another pleasant surprise was the **tofu**. It was my first time trying it, and I honestly liked it much more than paneer.
 
-<div className="flex justify-center my-6">
-  <img
-    src={`${import.meta.env.BASE_URL}Media/chimichurri-ramen-1.jpeg`}
-    alt="Chicken Chilli Garlic Ramen"
-    className="rounded-2xl shadow-md"
-  />
-</div>
-
-<div className="flex justify-center my-6">
-  <img
-    src={`${import.meta.env.BASE_URL}Media/chimichurri-ramen-2.jpeg`}
-    alt="Chicken Chilli Garlic Ramen close-up"
-    className="rounded-2xl shadow-md"
-  />
-</div>
-
-<p className="text-center text-sm text-gray-500">
-  Chicken Chilli Garlic Ramen.
-</p>
+<figure className="my-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <img
+      src={`${import.meta.env.BASE_URL}Media/chimichurri-ramen-1.jpeg`}
+      alt="Chicken Chilli Garlic Ramen"
+      className="w-full max-h-[340px] object-cover rounded-lg"
+    />
+    <img
+      src={`${import.meta.env.BASE_URL}Media/chimichurri-ramen-2.jpeg`}
+      alt="Chicken Chilli Garlic Ramen close-up"
+      className="w-full max-h-[340px] object-cover rounded-lg"
+    />
+  </div>
+  <figcaption className="text-center text-xs text-muted-foreground mt-2 italic">
+    Chicken Chilli Garlic Ramen.
+  </figcaption>
+</figure>
 <br></br>
 ### <u>Veg Chilli Garlic Ramen</u>
 
