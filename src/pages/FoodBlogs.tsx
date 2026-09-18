@@ -81,7 +81,7 @@ const FoodBlogs = () => {
               <span className="text-xs text-muted-foreground font-medium">{post.readTime}</span>
             </div>
 
-            <Link to={post.slug} className="group block mb-2">
+            <Link to={post.path} className="group block mb-2">
               <h2 className="text-xl font-bold text-text group-hover:text-primary leading-snug">
                 {post.title}
               </h2>
@@ -94,7 +94,7 @@ const FoodBlogs = () => {
             <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t border-border/30">
               <span>Published on {formatDate(post.date)}</span>
               <Link
-                to={post.slug}
+                to={post.path}
                 className="text-primary font-semibold hover:underline"
               >
                 Read Story &rarr;

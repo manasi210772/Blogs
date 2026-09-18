@@ -11,6 +11,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "mahabi",
+    title: "Trying the Viral London Slice at Mahabi Cafe Patisserie Gelato",
+    description:
+      "A social-media-inspired visit to Mahabi Cafe Patisserie Gelato in Manpada, Thane, to try the viral London Slice and my first macarons.",
+    date: "2026-08-23",
+    tags: ["Café", "Desserts"],
+    readTime: "5 min read",
+    path: "/blogs/food/mahabi",
+  },
+  {
+    slug: "chinesewok",
+    title: "A Vegetarian Detour That Led Me to Chinese Wok",
+    description:
+      "A search for an interesting vegetarian lunch at Lakeshore Mall led me to Chinese Wok, followed by a refreshing Oreo Frappe from McDonald's.",
+    date: "2026-08-22",
+    tags: ["Asian", "Vegetarian"],
+    readTime: "5 min read",
+    path: "/blogs/food/chinesewok",
+  },
+  {
     slug: "chimichurri-2",
     title: "Back to Chimichurri: A Second Asian Food Adventure",
     description:
