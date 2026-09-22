@@ -11,6 +11,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "malvan",
+    title: "Finally, Shraavan Is Over! A Seafood Feast at Hotel Malvan",
+    description:
+      "After a month without non-veg, I finally celebrated the end of Shraavan with crab, surmai, ravas, rice bhakri and rice at Hotel Malvan in Panchpakhadi, Thane.",
+    date: "2026-09-19",
+    tags: ["Seafood", "Maharashtrian"],
+    readTime: "4 min read",
+    path: "/blogs/food/malvan",
+  },
+  {
     slug: "mahabi",
     title: "Trying the Viral London Slice at Mahabi Cafe Patisserie Gelato",
     description:

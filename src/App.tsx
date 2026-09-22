@@ -15,6 +15,7 @@ import Chimichurri2Blog from "./pages/Chimichurri2Blog";
 import PizzaExpressBlog from "./pages/PizzaExpressBlog";
 import ChineseWokBlog from "./pages/ChineseWokBlog";
 import MahabiBlog from "./pages/MahabiBlog";
+import MalvanBlog from "./pages/MalvanBlog";
 import FoodPatternBackground from "./components/FoodPatternBackground";
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/blogs/food/pizzaexpress" element={<PizzaExpressBlog />} />
           <Route path="/blogs/food/chinesewok" element={<ChineseWokBlog />} />
           <Route path="/blogs/food/mahabi" element={<MahabiBlog />} />
+          <Route path="/blogs/food/malvan" element={<MalvanBlog />} />
           <Route path="*" element={<Home />} />
         </Routes>
 
