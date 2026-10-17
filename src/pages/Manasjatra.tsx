@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Manasjatra from "../blogs/manasjatra.mdx";
 
-const ManasjatraBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Manasjatra />
-    </div>
-  );
-};
+const ManasjatraBlog = () => <BlogContent Post={Manasjatra} slug="manasjatra" />;
 
 export default ManasjatraBlog;

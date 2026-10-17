@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Bluetokai from "../blogs/bluetokai.mdx";
 
-const BluetokaiBlogs = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Bluetokai />
-    </div>
-  );
-};
+const BluetokaiBlogs = () => <BlogContent Post={Bluetokai} slug="bluetokai" />;
 
 export default BluetokaiBlogs;

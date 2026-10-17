@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Malvan from "../blogs/malvan.mdx";
 
-const MalvanBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Malvan />
-    </div>
-  );
-};
+const MalvanBlog = () => <BlogContent Post={Malvan} slug="malvan" />;
 
 export default MalvanBlog;

@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Sugarcane from "../blogs/sugarcane.mdx";
 
-const SugarcaneBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Sugarcane />
-    </div>
-  );
-};
+const SugarcaneBlog = () => <BlogContent Post={Sugarcane} slug="sugarcane" />;
 
 export default SugarcaneBlog;

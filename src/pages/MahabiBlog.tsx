@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Mahabi from "../blogs/mahabi.mdx";
 
-const MahabiBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Mahabi />
-    </div>
-  );
-};
+const MahabiBlog = () => <BlogContent Post={Mahabi} slug="mahabi" />;
 
 export default MahabiBlog;

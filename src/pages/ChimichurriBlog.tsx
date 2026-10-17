@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Chimichurri from "../blogs/Chimichurri.mdx";
 
-const ChimichurriBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Chimichurri />
-    </div>
-  );
-};
+const ChimichurriBlog = () => <BlogContent Post={Chimichurri} slug="chimichurri" />;
 
 export default ChimichurriBlog;

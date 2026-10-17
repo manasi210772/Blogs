@@ -1,7 +1,29 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Component as SlideGlowButton } from "@/components/ui/slide-glow-button";
+import { ease, hoverTransition, linkHover, press } from "../lib/motion";
+
+const MotionNavLink = motion.create(NavLink);
+
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  twMerge(
+    clsx(
+      "inline-block font-medium",
+      isActive
+        ? "text-text underline decoration-primary decoration-2 underline-offset-8"
+        : "text-muted-foreground",
+    ),
+  );
+
+const navLinkHover = {
+  variants: linkHover("secondary"),
+  whileHover: "hover",
+  whileTap: press,
+  transition: hoverTransition,
+};
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,67 +40,60 @@ const Header = () => {
   }
 
   return (
-    <header
-      className={twMerge(
-        "sticky top-0 z-50 w-full",
-        scrolled
-          ? "bg-background border-b border-border/50"
-          : "bg-transparent"
-      )}
+    <motion.header
+      className="sticky top-0 z-50 w-full"
+      initial={{ opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease }}
     >
-      <div className="w-11/12 sm:w-5/6 md:w-4/5 lg:w-3/4 xl:max-w-3xl 2xl:max-w-4xl mx-auto px-2 py-4 flex justify-between items-center">
+      {/* Backdrop fades in once the page scrolls; uses theme classes so dark mode just works. */}
+      <motion.div
+        aria-hidden
+        className="absolute inset-0 -z-10 border-b border-border bg-background/95"
+        initial={false}
+        animate={{ opacity: scrolled ? 1 : 0 }}
+        transition={{ duration: 0.3, ease }}
+      />
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
         {/* Brand */}
-        <NavLink to="/">
-          <span className="text-2xl text-primary font-semibold tracking-tight">
-            Manasi Patil
-          </span>
-        </NavLink>
+        <SlideGlowButton
+          as={Link}
+          to="/"
+          text="Manasi Patil"
+          aria-label="Manasi Patil, home"
+          // Outline follows the theme text colour so it reads on both the light and dark header.
+          outlineColor="hsl(var(--text))"
+          strokeWidth={1.25}
+          glowColor="rgba(217, 119, 54, 0.45)"
+          className="-ml-1 py-0 text-2xl normal-case tracking-normal sm:text-3xl md:text-3xl"
+        />
 
         {/* Nav */}
-        <nav className="flex items-center gap-3 text-sm font-semibold text-primary">
-          <svg
-            className="dark:fill-white h-4 w-4 cursor-pointer"
-            onClick={toggleDarkMode}
-            viewBox="0 0 24 24"
-          >
-            <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z" />
-          </svg>
-
-          <span className="text-border select-none">|</span>
-
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              twMerge(
-                clsx(
-                  "hover:text-secondary",
-                  isActive && "underline underline-offset-4 text-accent"
-                )
-              )
-            }
-          >
+        <nav aria-label="Primary" className="flex items-center gap-5 text-sm">
+          <MotionNavLink to="/" end className={navLinkClass} {...navLinkHover}>
             Home
-          </NavLink>
+          </MotionNavLink>
 
-          <span className="text-border select-none">|</span>
-
-          <NavLink
-            to="/blogs/food"
-            className={({ isActive }) =>
-              twMerge(
-                clsx(
-                  "hover:text-secondary",
-                  isActive && "underline underline-offset-4 text-accent"
-                )
-              )
-            }
-          >
+          <MotionNavLink to="/blogs/food" className={navLinkClass} {...navLinkHover}>
             Blog
-          </NavLink>
+          </MotionNavLink>
+
+          <motion.button
+            type="button"
+            aria-label="Toggle dark mode"
+            onClick={toggleDarkMode}
+            whileHover={{ rotate: 20 }}
+            whileTap={{ rotate: 180 }}
+            transition={{ duration: 0.3, ease }}
+            className="rounded-md p-1 text-text"
+          >
+            <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden>
+              <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z" />
+            </svg>
+          </motion.button>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import Maiz from "../blogs/maiz.mdx";
 
-const MaizBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <Maiz />
-    </div>
-  );
-};
+const MaizBlog = () => <BlogContent Post={Maiz} slug="maiz" />;
 
 export default MaizBlog;

@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import ChineseWok from "../blogs/chinesewok.mdx";
 
-const ChineseWokBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <ChineseWok />
-    </div>
-  );
-};
+const ChineseWokBlog = () => <BlogContent Post={ChineseWok} slug="chinesewok" />;
 
 export default ChineseWokBlog;

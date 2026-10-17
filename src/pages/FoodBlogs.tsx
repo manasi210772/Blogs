@@ -1,107 +1,52 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { blogPosts } from "../data/blogPosts";
-import { getTagColorClass } from "../utils/tagColors";
-
-const formatDate = (dateStr: string) => {
-  return new Date(dateStr).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-};
-
-const CATEGORIES = ["All", "Asian", "Café & Coffee", "Mexican", "Italian", "Street Food", "Thali"];
+import { AnimatePresence } from "framer-motion";
+import { filterPosts } from "../lib/categories";
+import { Reveal, Stagger, StaggerItem } from "../components/Reveal";
+import CategoryPills from "../components/CategoryPills";
+import PostCard from "../components/PostCard";
 
 const FoodBlogs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const filteredPosts = blogPosts.filter((post) => {
-    if (selectedCategory === "All") return true;
-    if (selectedCategory === "Café & Coffee") {
-      return post.tags.some((t) => ["Café", "Cafe", "Coffee"].includes(t));
-    }
-    return post.tags.some((t) => t.toLowerCase().includes(selectedCategory.toLowerCase()));
-  });
+  const filteredPosts = filterPosts(selectedCategory);
 
   return (
-    <div className="pt-8 pb-8 text-left">
+    <div className="pb-8 pt-8 text-left md:pt-12">
+      {/* Header (above the fold: animates on load) */}
+      <Stagger gap={0.12} animate="visible" whileInView={undefined} className="mb-10 max-w-xl">
+        <StaggerItem>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            The journal
+          </p>
+        </StaggerItem>
+        <StaggerItem>
+          <h1 className="mb-3 text-[2.369rem] font-bold leading-[1.2]">Food blogs &amp; reviews</h1>
+        </StaggerItem>
+        <StaggerItem>
+          <p className="text-muted-foreground">
+            Delicious stories, honest reviews, and culinary adventures.
+          </p>
+        </StaggerItem>
+      </Stagger>
 
-      {/* Header */}
-      <div className="text-center max-w-xl mx-auto mb-8 border-b border-border/40 pb-6">
-        <h1 className="text-4xl font-bold text-text tracking-tight mb-2">
-          Food Blogs &amp; Reviews
-        </h1>
-        <p className="text-muted-foreground text-base leading-relaxed">
-          Delicious stories, honest reviews, and culinary adventures.
-        </p>
-      </div>
-
-      {/* Category Pills */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1 rounded text-xs font-semibold transition-colors border ${
-                selectedCategory === cat
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-text border-border/60 hover:border-primary/40"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <span className="text-xs text-muted-foreground font-medium">
+      {/* Category pills */}
+      <Reveal className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <CategoryPills
+          selected={selectedCategory}
+          onSelect={setSelectedCategory}
+          layoutId="foodblogs-category-pill"
+        />
+        <span className="text-xs font-medium text-muted-foreground">
           {filteredPosts.length} {filteredPosts.length === 1 ? "story" : "stories"}
         </span>
-      </div>
+      </Reveal>
 
-      {/* Post Grid/List */}
-      <div className="flex flex-col gap-4">
-        {filteredPosts.map((post) => (
-          <article
-            key={post.slug}
-            className="rounded-lg border border-border/60 bg-card/40 p-5 hover:border-primary/50 transition-colors"
-          >
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <div className="flex flex-wrap items-center gap-2">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`inline-block px-2.5 py-0.5 rounded text-xs font-semibold border ${getTagColorClass(tag)}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <span className="text-xs text-muted-foreground font-medium">{post.readTime}</span>
-            </div>
-
-            <Link to={post.path} className="group block mb-2">
-              <h2 className="text-xl font-bold text-text group-hover:text-primary leading-snug">
-                {post.title}
-              </h2>
-            </Link>
-
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              {post.description}
-            </p>
-
-            <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t border-border/30">
-              <span>Published on {formatDate(post.date)}</span>
-              <Link
-                to={post.path}
-                className="text-primary font-semibold hover:underline"
-              >
-                Read Story &rarr;
-              </Link>
-            </div>
-          </article>
-        ))}
+      {/* Post grid */}
+      <div className="grid gap-4 md:grid-cols-2">
+        <AnimatePresence mode="popLayout">
+          {filteredPosts.map((post) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );

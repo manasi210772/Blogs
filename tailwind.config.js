@@ -48,6 +48,10 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      fontFamily: {
+        display: ['"Fraunces Variable"', "Palatino", "Georgia", "serif"],
+        sans: ['"DM Sans Variable"', "system-ui", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

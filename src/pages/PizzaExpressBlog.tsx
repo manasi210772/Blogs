@@ -1,11 +1,6 @@
+import BlogContent from "../components/BlogContent";
 import PizzaExpress from "../blogs/PizzaExpress.mdx";
 
-const PizzaExpressBlog = () => {
-  return (
-    <div className="prose prose-stone max-w-none dark:prose-invert">
-      <PizzaExpress />
-    </div>
-  );
-};
+const PizzaExpressBlog = () => <BlogContent Post={PizzaExpress} slug="pizzaexpress" />;
 
 export default PizzaExpressBlog;
