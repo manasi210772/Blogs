@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-canvas font-body text-body text-ink antialiased;
+    /* Soft terracotta glows at the top-right and left edges; static, so no scroll repaint cost. */
+    background-image:
+      radial-gradient(900px 600px at 100% 0%, rgba(217, 119, 54, 0.14), transparent 70%),
+      radial-gradient(700px 500px at 0% 24%, rgba(217, 119, 54, 0.08), transparent 70%);
+    background-repeat: no-repeat;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 3px solid #2c1e11;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
