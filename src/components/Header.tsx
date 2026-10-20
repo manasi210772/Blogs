@@ -1,28 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
-import { ease, hoverTransition, linkHover, press } from "../lib/motion";
+import { ease, hoverTransition, press } from "../lib/motion";
+import { colors, lift } from "../landing/motion";
 
-const MotionNavLink = motion.create(NavLink);
-
-const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  twMerge(
-    clsx(
-      "inline-block font-medium",
-      isActive
-        ? "text-text underline decoration-primary decoration-2 underline-offset-8"
-        : "text-muted-foreground",
-    ),
-  );
-
-const navLinkHover = {
-  variants: linkHover("secondary"),
-  whileHover: "hover",
-  whileTap: press,
-  transition: hoverTransition,
-};
+const MotionLink = motion.create(Link);
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -59,14 +41,26 @@ const Header = () => {
         </Link>
 
         {/* Nav */}
-        <nav aria-label="Primary" className="flex items-center gap-5 text-sm">
-          <MotionNavLink to="/" end className={navLinkClass} {...navLinkHover}>
+        {/* Same link and button styles as the landing page navbar. */}
+        <nav aria-label="Primary" className="flex items-center gap-lg">
+          <MotionLink
+            to="/"
+            whileHover={{ ...lift, color: colors.accentHover }}
+            whileTap={press}
+            transition={hoverTransition}
+            className="inline-block text-body font-medium text-walnut"
+          >
             Home
-          </MotionNavLink>
-
-          <MotionNavLink to="/blogs/food" className={navLinkClass} {...navLinkHover}>
+          </MotionLink>
+          <MotionLink
+            to="/blogs/food"
+            whileHover={{ ...lift, backgroundColor: colors.accentHover }}
+            whileTap={press}
+            transition={hoverTransition}
+            className="inline-block rounded-[8px] bg-primary px-md py-sm text-body font-semibold text-canvas"
+          >
             Blog
-          </MotionNavLink>
+          </MotionLink>
         </nav>
       </div>
     </motion.header>
