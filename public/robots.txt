@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://manasi210772.github.io/Blogs/sitemap.xml
