@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Routes, Route, Navigate, useLocation, useNavigationType } from "react-router-dom";
 import { MotionConfig, motion } from "framer-motion";
 import { fadeUp } from "./lib/motion";
 
@@ -10,29 +10,35 @@ import { ease } from "./landing/motion";
 
 import Home from "./pages/Home";
 import FoodBlogs from "./pages/FoodBlogs";
-import SugarcaneBlog from "./pages/SugarcaneBlog";
-import ManasjatraBlog from "./pages/Manasjatra";
-import OraBlog from "./pages/OraBlog";
-import MaizBlog from "./pages/MaizBlog";
-import BluetokaiBlogs from "./pages/BluetokaiBlogs";
-import ChimichurriBlog from "./pages/ChimichurriBlog";
-import Chimichurri2Blog from "./pages/Chimichurri2Blog";
-import PizzaExpressBlog from "./pages/PizzaExpressBlog";
-import ChineseWokBlog from "./pages/ChineseWokBlog";
-import MahabiBlog from "./pages/MahabiBlog";
-import MalvanBlog from "./pages/MalvanBlog";
+import PostPage from "./pages/PostPage";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
-  const { pathname } = useLocation();
+  const { pathname, key } = useLocation();
+  const navType = useNavigationType();
 
-  // Each route starts at the top, like a fresh page.
+  // Remember where each history entry was scrolled to, so Back returns to the same spot in a list
+  // and any new page starts at the top. "instant" overrides the smooth scrolling set on <html>.
+  const positions = useRef<Record<string, number>>({});
+  const currentKey = useRef(key);
+  currentKey.current = key;
+
   useEffect(() => {
-    // "instant" overrides the smooth scrolling set on <html>, so a new page does not animate upward.
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
+    window.history.scrollRestoration = "manual";
+    const onScroll = () => {
+      positions.current[currentKey.current] = window.scrollY;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  // The landing page has its own full-width navbar and footer; blog routes keep the shared shell.
-  const isLanding = !pathname.startsWith("/blogs");
+  useEffect(() => {
+    const top = navType === "POP" ? (positions.current[key] ?? 0) : 0;
+    window.scrollTo({ top, behavior: "instant" });
+  }, [key, navType]);
+
+  // The landing page has its own full-width navbar; every other route uses the shared shell.
+  const isLanding = pathname === "/";
 
   if (isLanding) {
     return (
@@ -62,19 +68,10 @@ const App = () => {
         <main className="relative z-10 mx-auto w-full max-w-5xl flex-1 px-4 pb-12 sm:px-6">
           <motion.div key={pathname} variants={fadeUp} initial="hidden" animate="visible">
             <Routes>
+              <Route path="/blogs" element={<Navigate to="/blogs/food" replace />} />
               <Route path="/blogs/food" element={<FoodBlogs />} />
-              <Route path="/blogs/food/sugarcane" element={<SugarcaneBlog />} />
-              <Route path="/blogs/food/manasjatra" element={<ManasjatraBlog />} />
-              <Route path="/blogs/food/ora" element={<OraBlog />} />
-              <Route path="/blogs/food/maiz" element={<MaizBlog />} />
-              <Route path="/blogs/food/bluetokai" element={<BluetokaiBlogs />} />
-              <Route path="/blogs/food/chimichurri" element={<ChimichurriBlog />} />
-              <Route path="/blogs/food/chimichurri-2" element={<Chimichurri2Blog />} />
-              <Route path="/blogs/food/pizzaexpress" element={<PizzaExpressBlog />} />
-              <Route path="/blogs/food/chinesewok" element={<ChineseWokBlog />} />
-              <Route path="/blogs/food/mahabi" element={<MahabiBlog />} />
-              <Route path="/blogs/food/malvan" element={<MalvanBlog />} />
-              <Route path="*" element={<Navigate to="/blogs/food" replace />} />
+              <Route path="/blogs/food/:slug" element={<PostPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </motion.div>
         </main>

@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { usePageMeta } from "../lib/usePageMeta";
 import { filterPosts } from "../lib/categories";
 import { Reveal, Stagger, StaggerItem } from "../components/Reveal";
 import CategoryPills from "../components/CategoryPills";
 import PostCard from "../components/PostCard";
 
 const FoodBlogs = () => {
+  usePageMeta({
+    title: "Food blogs & reviews",
+    description: "Delicious stories, honest reviews and culinary adventures from restaurants, cafés and street food stalls.",
+  });
   const [selectedCategory, setSelectedCategory] = useState("All");
   const filteredPosts = filterPosts(selectedCategory);
 

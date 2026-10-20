@@ -5,6 +5,7 @@ import { blogPosts } from "../data/blogPosts";
 import { formatDate } from "../lib/categories";
 import { getTagColorClass } from "../utils/tagColors";
 import { fadeUp, inView } from "../lib/motion";
+import { usePageMeta } from "../lib/usePageMeta";
 import { Stagger, StaggerItem } from "./Reveal";
 
 // Headings, quotes and figures fade up as they scroll into view. Paragraphs and lists render
@@ -26,6 +27,7 @@ const components = {
 
 const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {
   const meta = blogPosts.find((p) => p.slug === slug);
+  usePageMeta({ title: meta?.title, description: meta?.description, image: meta?.cover });
 
   return (
     <article className="pt-8 md:pt-12">
