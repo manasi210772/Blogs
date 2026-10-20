@@ -1,14 +1,11 @@
 import type { ComponentType } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MDXProvider } from "@mdx-js/react";
 import { blogPosts } from "../data/blogPosts";
 import { formatDate } from "../lib/categories";
 import { getTagColorClass } from "../utils/tagColors";
-import { fadeUp, hoverTransition, inView, lift, press } from "../lib/motion";
+import { fadeUp, inView } from "../lib/motion";
 import { Stagger, StaggerItem } from "./Reveal";
-
-const MotionLink = motion.create(Link);
 
 // Every top-level MDX block fades up as it scrolls into view.
 const reveal = {
@@ -42,17 +39,6 @@ const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {
           whileInView={undefined}
           className="mx-auto mb-4 max-w-2xl text-left"
         >
-          <StaggerItem className="mb-6">
-            <MotionLink
-              to="/blogs/food"
-              className="inline-block text-sm font-semibold text-muted-foreground"
-              whileHover={lift}
-              whileTap={press}
-              transition={hoverTransition}
-            >
-              &larr; All stories
-            </MotionLink>
-          </StaggerItem>
           <StaggerItem>
             <ul className="mb-4 flex flex-wrap gap-2">
               {meta.tags.map((tag) => (
