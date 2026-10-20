@@ -28,7 +28,7 @@ const SNAPS = [
     alt: "Crab curry, rice bhakri and surmai fry at Hotel Malvan",
     w: 1280,
     h: 804,
-    className: "left-0 top-0 w-[68%]",
+    className: "left-0 top-0 w-[64%]",
     rotate: -3,
     priority: true,
   },
@@ -37,7 +37,7 @@ const SNAPS = [
     alt: "A plate of Mexican food at Maiz",
     w: 960,
     h: 1280,
-    className: "right-0 top-[18%] w-[40%]",
+    className: "right-0 top-[8%] w-[42%]",
     rotate: 4,
   },
   {
@@ -45,14 +45,14 @@ const SNAPS = [
     alt: "A spread of dishes at Mahabi",
     w: 1280,
     h: 960,
-    className: "bottom-0 left-[14%] w-[52%]",
+    className: "bottom-0 left-[16%] w-[54%]",
     rotate: -1.5,
   },
 ];
 
 export default function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-6xl overflow-x-clip px-md pb-xl pt-lg sm:px-lg md:pt-xl">
+    <section id="top" className="mx-auto max-w-6xl overflow-x-clip px-md pb-lg pt-lg sm:px-lg md:pt-lg">
       <div className="grid items-center gap-xl md:grid-cols-[1.1fr_0.9fr] md:gap-lg">
         <motion.div variants={stagger(0.12)} initial="hidden" animate="visible" className="text-left">
           <motion.p
@@ -106,7 +106,7 @@ export default function Hero() {
           </motion.ul>
         </motion.div>
 
-        <div className="relative mx-auto aspect-[5/6] w-full max-w-md md:max-w-none">
+        <div className="relative mx-auto aspect-square w-full max-w-md md:max-w-none">
           {SNAPS.map((s, i) => (
             <motion.figure
               key={s.src}
