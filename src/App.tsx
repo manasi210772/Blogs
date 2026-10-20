@@ -27,7 +27,8 @@ const App = () => {
 
   // Each route starts at the top, like a fresh page.
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // "instant" overrides the smooth scrolling set on <html>, so a new page does not animate upward.
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   // The landing page has its own full-width navbar and footer; blog routes keep the shared shell.
