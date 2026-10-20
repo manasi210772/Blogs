@@ -21,34 +21,39 @@ const TOPICS = [
   { Icon: Cake, label: "Desserts" },
 ];
 
-// Scrapbook snapshots: uneven sizes, tilted, thick warm borders (SKILL.md anti-grid guidance).
-const SNAPS = [
+// Left: tall Blue Tokai collage. Right: three landscape photos stacked. The column widths are set so
+// both sides end at the same height and no photo is cropped (portrait 899x1599; landscapes 1280x804,
+// 1280x960, 1280x960).
+const TALL = {
+  src: media("blue-tokai-collage.jpeg"),
+  alt: "Blue Tokai Coffee Roasters: the café, a cup of coffee, garlic bread and the view from the door",
+  w: 899,
+  h: 1599,
+};
+
+const STACK = [
   {
     src: media("hotel-malvan-crab-surmai.jpeg"),
     alt: "Crab curry, rice bhakri and surmai fry at Hotel Malvan",
     w: 1280,
     h: 804,
-    className: "left-0 top-0 w-[64%]",
-    rotate: -3,
-    priority: true,
   },
   {
-    src: media("maiz-food.jpeg"),
-    alt: "A plate of Mexican food at Maiz",
-    w: 960,
-    h: 1280,
-    className: "right-0 top-[8%] w-[42%]",
-    rotate: 4,
+    src: media("mutton-hero.jpeg"),
+    alt: "A mutton thali with rotis, sides and salad",
+    w: 1280,
+    h: 960,
   },
   {
     src: media("mahabi-food-items.jpeg"),
     alt: "A spread of dishes at Mahabi",
     w: 1280,
     h: 960,
-    className: "bottom-0 left-[16%] w-[54%]",
-    rotate: -1.5,
   },
 ];
+
+const PHOTO = "overflow-hidden rounded-[12px] border-[1.5px] border-ink/10 bg-card";
+
 
 export default function Hero() {
   return (
@@ -106,26 +111,44 @@ export default function Hero() {
           </motion.ul>
         </motion.div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-md md:max-w-none">
-          {SNAPS.map((s, i) => (
-            <motion.figure
-              key={s.src}
-              initial={{ opacity: i === 0 ? 1 : 0, y: 28, rotate: s.rotate * 2 }}
-              animate={{ opacity: 1, y: 0, rotate: s.rotate }}
-              transition={{ duration: 0.7, delay: i * 0.15, ease }}
-              whileHover={{ ...lift, rotate: 0 }}
-              className={`absolute overflow-hidden rounded-[12px] border-[6px] border-card bg-card outline outline-1 outline-ink/15 ${s.className}`}
-            >
-              <img
-                src={s.src}
-                alt={s.alt}
-                width={s.w}
-                height={s.h}
-                loading={s.priority ? "eager" : "lazy"}
-                className="h-auto w-full"
-              />
-            </motion.figure>
-          ))}
+        <div className="mx-auto grid w-full max-w-md grid-cols-[1.28fr_1fr] gap-md md:max-w-none">
+          <motion.figure
+            initial={{ y: 24 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease }}
+            whileHover={lift}
+            className={PHOTO}
+          >
+            <img
+              src={TALL.src}
+              alt={TALL.alt}
+              width={TALL.w}
+              height={TALL.h}
+              className="h-full w-full object-cover"
+            />
+          </motion.figure>
+
+          <div className="flex flex-col gap-md">
+            {STACK.map((s, i) => (
+              <motion.figure
+                key={s.src}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.12 * (i + 1), ease }}
+                whileHover={lift}
+                className={PHOTO}
+              >
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  width={s.w}
+                  height={s.h}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </motion.figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>
