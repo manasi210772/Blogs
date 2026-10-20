@@ -6,6 +6,7 @@ import { formatDate } from "../lib/categories";
 import { getTagColorClass } from "../utils/tagColors";
 import { usePageMeta } from "../lib/usePageMeta";
 import { Stagger, StaggerItem } from "./Reveal";
+import PostNav from "./PostNav";
 
 // <Rating value="8" /> in a post renders as a real element instead of a "### ⭐ Rating" heading.
 const Rating = ({ value, label = "Rating" }: { value: string; label?: string }) => (
@@ -44,7 +45,7 @@ const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {
               {meta.tags.map((tag) => (
                 <li
                   key={tag}
-                  className={`rounded-sm border px-2 py-0.5 text-xs font-medium ${getTagColorClass()}`}
+                  className={`rounded-sm border px-2 py-0.5 text-small ${getTagColorClass()}`}
                 >
                   {tag}
                 </li>
@@ -55,9 +56,12 @@ const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {
             <h1 className="mb-3 text-[2.369rem] font-bold leading-[1.2]">{meta.title}</h1>
           </StaggerItem>
           <StaggerItem>
-            <p className="border-b border-border pb-6 text-sm text-muted-foreground">
-              {formatDate(meta.date)} &middot; {meta.readTime}
+            <p className="text-sm text-muted-foreground">
+              {formatDate(meta.date)} &middot; {meta.readTime} &middot; {meta.place}
             </p>
+          </StaggerItem>
+          <StaggerItem>
+            <hr className="mb-2 mt-8 border-border" />
           </StaggerItem>
         </Stagger>
       )}
@@ -68,6 +72,7 @@ const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {
         </div>
       </MDXProvider>
 
+      <PostNav slug={slug} />
     </article>
   );
 };
