@@ -18,6 +18,8 @@ const Home = () => (
     <div className={BAND}>
       <FAQ />
     </div>
+    {/* Plain background between the last section and the footer. */}
+    <div aria-hidden className="h-16 md:h-24" />
   </>
 );
 
