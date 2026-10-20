@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Component as SlideGlowButton } from "@/components/ui/slide-glow-button";
 import { ease, hoverTransition, linkHover, press } from "../lib/motion";
 
 const MotionNavLink = motion.create(NavLink);
@@ -56,17 +55,13 @@ const Header = () => {
       />
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
         {/* Brand */}
-        <SlideGlowButton
-          as={Link}
+        <Link
           to="/"
-          text="Manasi Patil"
           aria-label="Manasi Patil, home"
-          // Outline follows the theme text colour so it reads on both the light and dark header.
-          outlineColor="hsl(var(--text))"
-          strokeWidth={1.25}
-          glowColor="rgba(217, 119, 54, 0.45)"
-          className="-ml-1 py-0 text-2xl normal-case tracking-normal sm:text-3xl md:text-3xl"
-        />
+          className="font-display text-2xl font-bold text-text sm:text-3xl"
+        >
+          Manasi Patil
+        </Link>
 
         {/* Nav */}
         <nav aria-label="Primary" className="flex items-center gap-5 text-sm">
