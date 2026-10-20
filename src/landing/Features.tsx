@@ -1,14 +1,9 @@
 import { motion } from "framer-motion";
 import { Camera, Salad, Utensils } from "lucide-react";
-import { colors, fadeUp, hoverTransition, lift } from "./motion";
+import { fadeUp } from "./motion";
 import { SectionHeading, Stagger } from "./Reveal";
 
 const CRAVINGS = ["Street food", "Cafés", "Thalis", "Fine dining", "Desserts"];
-
-const cardHover = {
-  whileHover: { ...lift, borderColor: colors.accent },
-  transition: hoverTransition,
-};
 
 export default function Features() {
   return (
@@ -20,7 +15,6 @@ export default function Features() {
       <Stagger gap={0.12} className="grid gap-md md:grid-cols-5">
         <motion.article
           variants={fadeUp}
-          {...cardHover}
           className="rounded-[12px] border-[1.5px] border-ink/10 bg-card p-lg md:col-span-3 md:row-span-2 md:p-xl"
         >
           <h3 className="mb-md inline-flex items-center gap-sm text-h3 text-ink">
@@ -45,7 +39,6 @@ export default function Features() {
 
         <motion.article
           variants={fadeUp}
-          {...cardHover}
           className="rounded-[12px] border-[1.5px] border-ink/10 bg-card p-lg md:col-span-2"
         >
           <h3 className="mb-sm inline-flex items-center gap-sm text-h3 text-ink">
@@ -59,7 +52,6 @@ export default function Features() {
 
         <motion.article
           variants={fadeUp}
-          {...cardHover}
           className="rounded-[12px] border-[1.5px] border-ink/10 bg-card p-lg md:col-span-2"
         >
           <h3 className="mb-sm inline-flex items-center gap-sm text-h3 text-ink">
