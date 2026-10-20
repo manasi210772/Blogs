@@ -33,12 +33,6 @@ const TALL = {
 
 const STACK = [
   {
-    src: media("hotel-malvan-crab-surmai.jpeg"),
-    alt: "Crab curry, rice bhakri and surmai fry at Hotel Malvan",
-    w: 1280,
-    h: 804,
-  },
-  {
     src: media("mutton-hero.jpeg"),
     alt: "A mutton thali with rotis, sides and salad",
     w: 1280,
@@ -49,6 +43,12 @@ const STACK = [
     alt: "A spread of dishes at Mahabi",
     w: 1280,
     h: 960,
+  },
+  {
+    src: media("hotel-malvan-crab-surmai.jpeg"),
+    alt: "Crab curry, rice bhakri and surmai fry at Hotel Malvan",
+    w: 1280,
+    h: 804,
   },
 ];
 
