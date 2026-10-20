@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Utensils } from "lucide-react";
 import type { BlogPost } from "../data/blogPosts";
 import { getTagColorClass } from "../utils/tagColors";
 import { formatDate } from "../lib/categories";
-import { cardHover, fadeUp, hoverTransition, inView, lift, press, titleHover } from "../lib/motion";
-
-const MotionLink = motion.create(Link);
+import { cardHover, fadeUp, hoverTransition, inView, titleHover } from "../lib/motion";
 
 const PostCard = ({ post }: { post: BlogPost }) => (
   <motion.article
@@ -20,45 +19,63 @@ const PostCard = ({ post }: { post: BlogPost }) => (
       visible: fadeUp.visible,
       hover: cardHover(0.5).hover,
     }}
-    className="flex flex-col rounded-lg border-[1.5px] border-border bg-card p-6"
+    className="relative flex flex-col overflow-hidden rounded-lg border-[1.5px] border-border bg-card"
   >
-    <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-      <ul className="flex flex-wrap items-center gap-2">
+    {/* Cover photo; posts without one get a tinted block so every card has the same shape. */}
+    {post.cover ? (
+      <img
+        src={`${import.meta.env.BASE_URL}${post.cover}`}
+        alt={post.coverAlt ?? ""}
+        width={800}
+        height={500}
+        loading="lazy"
+        decoding="async"
+        className="aspect-[16/10] w-full object-cover"
+      />
+    ) : (
+      <div
+        aria-hidden
+        className="flex aspect-[16/10] w-full items-center justify-center bg-decor/10 text-decor"
+      >
+        <Utensils size={36} strokeWidth={1.5} />
+      </div>
+    )}
+
+    <div className="flex flex-1 flex-col p-6">
+      <ul className="mb-3 flex flex-wrap items-center gap-2">
         {post.tags.map((tag) => (
           <li
             key={tag}
-            className={`rounded-sm border px-2 py-0.5 text-xs font-medium ${getTagColorClass()}`}
+            className={`rounded-sm border px-2 py-0.5 text-small ${getTagColorClass()}`}
           >
             {tag}
           </li>
         ))}
       </ul>
-      <span className="text-xs font-medium text-muted-foreground">{post.readTime}</span>
-    </div>
 
-    <Link to={post.path} className="mb-2 block">
-      <motion.h3
-        variants={titleHover}
-        transition={hoverTransition}
-        className="text-xl font-semibold leading-snug text-text"
-      >
-        {post.title}
-      </motion.h3>
-    </Link>
+      {/* The title link is stretched over the whole card (after:inset-0), so the card is one target. */}
+      <h3 className="mb-2">
+        <Link to={post.path} className="after:absolute after:inset-0 after:content-['']">
+          <motion.span
+            variants={titleHover}
+            transition={hoverTransition}
+            className="block text-[1.375rem] font-semibold leading-snug text-text"
+          >
+            {post.title}
+          </motion.span>
+        </Link>
+      </h3>
 
-    <p className="mb-5 text-sm leading-relaxed text-muted-foreground">{post.description}</p>
+      <p className="mb-5 text-sm leading-relaxed text-muted-foreground">{post.description}</p>
 
-    <div className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-3 text-xs text-muted-foreground">
-      <span>{formatDate(post.date)}</span>
-      <MotionLink
-        to={post.path}
-        className="inline-block font-semibold text-text"
-        whileHover={lift}
-        whileTap={press}
-        transition={hoverTransition}
-      >
-        Read story &rarr;
-      </MotionLink>
+      <div className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-3 text-small text-muted-foreground">
+        <span>
+          {formatDate(post.date)} &middot; {post.readTime}
+        </span>
+        <span aria-hidden className="font-semibold text-text">
+          Read story &rarr;
+        </span>
+      </div>
     </div>
   </motion.article>
 );
