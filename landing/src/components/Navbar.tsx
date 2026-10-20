@@ -4,7 +4,6 @@ import { useState } from "react";
 import { AnimatePresence, m, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { BLOG_URL } from "@/data/posts";
-import { Component as SlideGlowButton } from "@/components/ui/slide-glow-button";
 import { colors, ease, hoverTransition, lift, press } from "@/lib/motion";
 
 const LINKS = [
@@ -34,16 +33,13 @@ export default function Navbar() {
         aria-label="Primary"
         className="mx-auto flex max-w-6xl items-center justify-between px-md py-md sm:px-lg"
       >
-        <SlideGlowButton
+        <a
           href="#top"
-          text="Manasi Patil"
           aria-label="Manasi Patil, back to top"
-          // Espresso outline reads on the cream bar; the warm terracotta glow matches the page glows.
-          outlineColor="#2C1E11"
-          strokeWidth={1.25}
-          glowColor="rgba(217, 119, 54, 0.45)"
-          className="-ml-1 py-0 text-2xl normal-case tracking-normal sm:text-3xl md:text-3xl"
-        />
+          className="font-display text-2xl font-bold text-ink sm:text-3xl"
+        >
+          Manasi Patil
+        </a>
 
         <ul className="hidden items-center gap-lg md:flex">
           {LINKS.map((l) => (
