@@ -37,21 +37,6 @@
   })(window.location);
 </script>
 
-<script>
-  // Tailwindcss docs config to setup dark/light mode based on user preferences
-  const preference = document.documentElement.classList.toggle(
-    "dark",
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches),
-  );
-  if (preference) {
-    localStorage.theme = "dark";
-  } else {
-    localStorage.theme = "light";
-  }
-</script>
-
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>

@@ -46,40 +46,8 @@
     --scrollbar-thumb-hover: #bf5e1e;
   }
 
-  .dark {
-    --text: 36 40% 92%;
-    --background: 25 25% 9%;
-    --foreground: 36 40% 92%;
-
-    --primary: 24 68% 58%;
-    --primary-foreground: 25 25% 9%;
-    --secondary: 24 70% 62%;
-    --secondary-foreground: 25 25% 9%;
-    --accent: 24 70% 62%;
-    --accent-foreground: 25 25% 9%;
-
-    --card: 25 20% 14%;
-    --card-foreground: 36 40% 92%;
-    --muted: 25 18% 18%;
-    --muted-foreground: 33 25% 68%;
-    --popover: 25 22% 12%;
-    --popover-foreground: 36 40% 92%;
-
-    --border: 28 18% 24%;
-    --input: 28 18% 24%;
-    --ring: 24 68% 58%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-
-    --glow: 0.1;
-
-    --scrollbar-track: #1c1511;
-    --scrollbar-thumb: #d97736;
-    --scrollbar-thumb-hover: #e08a50;
-  }
-
   html {
+    color-scheme: light;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     font-size: 100%;
