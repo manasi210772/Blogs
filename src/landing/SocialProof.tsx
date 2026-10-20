@@ -56,7 +56,7 @@ export default function SocialProof() {
         </Stagger>
 
         <Reveal>
-          <figure className="border-l-[3px] border-primary pl-lg">
+          <figure className="border-l-[3px] border-decor pl-lg">
             <blockquote className="font-display text-h3 text-ink md:text-h2">
               I keep mental notes of unforgettable meals, cozy café nooks and desserts that deserve a
               standing ovation.

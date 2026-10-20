@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         // Landing-page aliases onto the theme variables, so the landing follows light/dark too.
+        decor: "hsl(var(--decor))",
         ink: "hsl(var(--text))",
         walnut: "hsl(var(--muted-foreground))",
         canvas: "hsl(var(--background))",

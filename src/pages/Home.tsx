@@ -5,7 +5,7 @@ import SocialProof from "../landing/SocialProof";
 import FAQ from "../landing/FAQ";
 
 // Alternating full-bleed bands of faint terracotta keep the cream from reading as flat white.
-const BAND = "border-y border-ink/5 bg-primary/[0.08]";
+const BAND = "border-y border-ink/5 bg-decor/[0.08]";
 
 const Home = () => (
   <>

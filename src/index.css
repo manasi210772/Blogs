@@ -14,11 +14,13 @@
     --foreground: 29 44% 12%;
 
     /* Brand */
-    --primary: 24 68% 53%;            /* Terracotta #D97736 */
+    /* Buttons and links use a deeper terracotta so cream text passes WCAG AA (5.2:1). */
+    --primary: 24 76% 37%;            /* Deep terracotta #A65017 */
+    --decor: 24 68% 53%;              /* Terracotta #D97736: glows, borders and underlines only */
     --primary-foreground: 36 50% 97%;
-    --secondary: 24 73% 43%;          /* Toasted earth #BF5E1E (hover) */
+    --secondary: 23 79% 30%;          /* Burnt earth #893E10 (hover) */
     --secondary-foreground: 36 50% 97%;
-    --accent: 24 73% 43%;
+    --accent: 23 79% 30%;
     --accent-foreground: 36 50% 97%;
 
     /* Surfaces */
@@ -60,8 +62,8 @@
     overflow-x: hidden;
     /* Soft terracotta glows keep the cream from reading as flat white. */
     background-image:
-      radial-gradient(900px 600px at 100% 0%, hsl(var(--primary) / var(--glow)), transparent 70%),
-      radial-gradient(700px 500px at 0% 24%, hsl(var(--primary) / calc(var(--glow) * 0.6)), transparent 70%);
+      radial-gradient(900px 600px at 100% 0%, hsl(var(--decor) / var(--glow)), transparent 70%),
+      radial-gradient(700px 500px at 0% 24%, hsl(var(--decor) / calc(var(--glow) * 0.6)), transparent 70%);
     background-repeat: no-repeat;
   }
 
@@ -147,7 +149,7 @@ body {
   /* Posts underline their section titles; keep that, in terracotta. */
   .prose h2 u,
   .prose h3 u {
-    text-decoration-color: hsl(var(--primary));
+    text-decoration-color: hsl(var(--decor));
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
   }
@@ -187,7 +189,7 @@ body {
   .prose blockquote {
     margin: 1.5rem 0;
     padding-left: 1.25rem;
-    border-left: 3px solid hsl(var(--primary));
+    border-left: 3px solid hsl(var(--decor));
     font-family: "Fraunces Variable", Georgia, serif;
     font-size: 1.2rem;
     font-style: italic;

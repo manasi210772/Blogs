@@ -5,7 +5,7 @@ export const ease = [0.22, 1, 0.36, 1] as const;
 export const colors = {
   ink: "#2C1E11",
   accent: "#D97736",
-  accentHover: "#BF5E1E",
+  accentHover: "#893E10",
   canvas: "#FAF6F0",
 };
 
