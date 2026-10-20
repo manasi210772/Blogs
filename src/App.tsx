@@ -4,7 +4,6 @@ import { MotionConfig, motion } from "framer-motion";
 import { fadeUp } from "./lib/motion";
 
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import LandingNavbar from "./landing/Navbar";
 import LandingFooter from "./landing/Footer";
 import { ease } from "./landing/motion";
@@ -79,8 +78,8 @@ const App = () => {
           </motion.div>
         </main>
 
-        {/* Full-bleed footer band */}
-        <Footer />
+        {/* Same footer as the landing page */}
+        <LandingFooter />
       </div>
     </MotionConfig>
   );

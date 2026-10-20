@@ -7,8 +7,6 @@ const MotionLink = motion.create(Link);
 
 const LINKS = [
   { href: "https://www.pinterest.com/manasi210772/", label: "Pinterest", Icon: null },
-  { href: "https://github.com/manasi210772", label: "GitHub", Icon: null },
-  { href: "https://www.linkedin.com/in/manasi-patil-596034326/", label: "LinkedIn", Icon: null },
   { href: "mailto:manasi210772@gmail.com", label: "Email", Icon: Mail },
 ];
 
