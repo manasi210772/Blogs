@@ -44,10 +44,10 @@ export default function SocialProof() {
       <SectionHeading eyebrow="At a glance" title="Eating, writing, repeat" />
 
       <div className="grid gap-lg md:grid-cols-[1fr_1.2fr] md:items-center">
-        <Stagger gap={0.12} className="grid grid-cols-3 gap-md rounded-[12px] bg-card p-lg md:p-xl">
+        <Stagger gap={0.12} className="grid grid-cols-3 gap-sm rounded-[12px] bg-card p-md sm:gap-md sm:p-lg md:p-xl">
           {NUMBERS.map((n) => (
             <StaggerItem key={n.label}>
-              <p className="whitespace-nowrap font-display text-h1 font-bold text-accent md:text-display">
+              <p className="whitespace-nowrap font-display text-h2 font-bold text-accent sm:text-h1 md:text-display">
                 <CountUp to={n.to} suffix={n.suffix} />
               </p>
               <p className="text-small text-walnut">{n.label}</p>

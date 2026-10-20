@@ -18,8 +18,8 @@ const QUESTIONS = [
     a: "Please do. Email me at manasi210772@gmail.com with the name and the dish you think I should order.",
   },
   {
-    q: "Where do the full reviews live?",
-    a: "On the main blog. Every card on this page links straight to the full story, photos included.",
+    q: "How do I find a place or cuisine I like?",
+    a: "Use the filters on the blog page: Asian, Café & Coffee, Mexican, Italian, Street Food, Seafood and more. Every story also shows its tags and the place it is about.",
   },
 ];
 
