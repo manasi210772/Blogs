@@ -27,7 +27,7 @@ const PostCard = ({ post }: { post: BlogPost }) => (
         {post.tags.map((tag) => (
           <li
             key={tag}
-            className={`rounded-sm border px-2 py-0.5 text-xs font-medium ${getTagColorClass(tag)}`}
+            className={`rounded-sm border px-2 py-0.5 text-xs font-medium ${getTagColorClass()}`}
           >
             {tag}
           </li>
