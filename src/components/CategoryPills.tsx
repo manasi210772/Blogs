@@ -10,8 +10,12 @@ interface Props {
   layoutId: string;
 }
 
+// One scrolling row on phones (no multi-row wrap); wraps normally from sm up.
 const CategoryPills = ({ selected, onSelect, layoutId }: Props) => (
-  <Stagger gap={0.05} className="flex flex-wrap gap-2">
+  <Stagger
+    gap={0.05}
+    className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
+  >
     {CATEGORIES.map((cat) => {
       const active = selected === cat;
       return (
@@ -22,7 +26,7 @@ const CategoryPills = ({ selected, onSelect, layoutId }: Props) => (
           onClick={() => onSelect(cat)}
           whileHover={lift}
           whileTap={press}
-          className={`relative rounded-md border px-3 py-1.5 text-xs font-semibold ${
+          className={`relative min-h-11 shrink-0 snap-start whitespace-nowrap rounded-md border px-4 py-2 text-sm font-semibold ${
             active
               ? "border-primary text-primary-foreground"
               : "border-border bg-card text-text"

@@ -1,6 +1,17 @@
 import { blogPosts, type BlogPost } from "../data/blogPosts";
 
-export const CATEGORIES = ["All", "Asian", "Café & Coffee", "Mexican", "Italian", "Street Food", "Thali"];
+export const CATEGORIES = [
+  "All",
+  "Asian",
+  "Café & Coffee",
+  "Mexican",
+  "Italian",
+  "Street Food",
+  "Thali",
+  "Seafood",
+  "Desserts",
+  "Vegetarian",
+];
 
 export const filterPosts = (category: string): BlogPost[] =>
   blogPosts.filter((post) => {
