@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ease, hoverTransition, press } from "../lib/motion";
@@ -8,6 +8,18 @@ const MotionLink = motion.create(Link);
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  // Individual posts live under /blogs/food/<slug>; the index (/blogs/food) has no Back link.
+  const isPost = /^\/blogs\/food\/.+/.test(pathname);
+
+  // BrowserRouter records the position in history.state.idx; idx 0 means this is the first page
+  // of the visit (e.g. a shared link), where going back would leave the site.
+  const goBack = () => {
+    if (window.history.state?.idx > 0) navigate(-1);
+    else navigate("/blogs/food");
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -43,23 +55,26 @@ const Header = () => {
         {/* Nav */}
         {/* Same link and button styles as the landing page navbar. */}
         <nav aria-label="Primary" className="flex items-center gap-lg">
+          {isPost && (
+            <motion.button
+              type="button"
+              onClick={goBack}
+              whileHover={{ ...lift, color: colors.accentHover }}
+              whileTap={press}
+              transition={hoverTransition}
+              className="inline-block text-body font-medium text-walnut"
+            >
+              Back
+            </motion.button>
+          )}
           <MotionLink
             to="/"
-            whileHover={{ ...lift, color: colors.accentHover }}
-            whileTap={press}
-            transition={hoverTransition}
-            className="inline-block text-body font-medium text-walnut"
-          >
-            Home
-          </MotionLink>
-          <MotionLink
-            to="/blogs/food"
             whileHover={{ ...lift, backgroundColor: colors.accentHover }}
             whileTap={press}
             transition={hoverTransition}
             className="inline-block rounded-[8px] bg-primary px-md py-sm text-body font-semibold text-canvas"
           >
-            Blog
+            Home
           </MotionLink>
         </nav>
       </div>
