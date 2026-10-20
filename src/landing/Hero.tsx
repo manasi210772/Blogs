@@ -33,7 +33,7 @@ const TALL = {
 
 const STACK = [
   {
-    src: media("mutton-hero.jpeg"),
+    src: media("mutton.jpeg"),
     alt: "A mutton thali with rotis, sides and salad",
     w: 1280,
     h: 960,
