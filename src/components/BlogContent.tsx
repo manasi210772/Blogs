@@ -1,28 +1,29 @@
-import type { ComponentType } from "react";
-import { motion } from "framer-motion";
+import type { ComponentProps, ComponentType } from "react";
+import { Star } from "lucide-react";
 import { MDXProvider } from "@mdx-js/react";
 import { blogPosts } from "../data/blogPosts";
 import { formatDate } from "../lib/categories";
 import { getTagColorClass } from "../utils/tagColors";
-import { fadeUp, inView } from "../lib/motion";
 import { usePageMeta } from "../lib/usePageMeta";
 import { Stagger, StaggerItem } from "./Reveal";
 
-// Headings, quotes and figures fade up as they scroll into view. Paragraphs and lists render
-// immediately so the text can be read before JavaScript finishes loading.
-const reveal = {
-  variants: fadeUp,
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: inView,
-} as const;
+// <Rating value="8" /> in a post renders as a real element instead of a "### ⭐ Rating" heading.
+const Rating = ({ value, label = "Rating" }: { value: string; label?: string }) => (
+  <p
+    className="my-4 flex items-center gap-2 font-semibold text-text"
+    aria-label={`${label}: ${value} out of 10`}
+  >
+    <Star size={18} strokeWidth={1.75} className="fill-decor text-decor" aria-hidden />
+    <span aria-hidden>
+      {label}: {value}/10
+    </span>
+  </p>
+);
 
 const components = {
-  h1: (props: object) => <motion.h1 {...reveal} {...props} />,
-  h2: (props: object) => <motion.h2 {...reveal} {...props} />,
-  h3: (props: object) => <motion.h3 {...reveal} {...props} />,
-  blockquote: (props: object) => <motion.blockquote {...reveal} {...props} />,
-  figure: (props: object) => <motion.figure {...reveal} {...props} />,
+  Rating,
+  // Photos load as they near the viewport; width/height in the MDX reserve their space.
+  img: (props: ComponentProps<"img">) => <img loading="lazy" decoding="async" {...props} />,
 };
 
 const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {

@@ -16,6 +16,8 @@ export default defineConfig({
   plugins: [
     react(),
     mdx({
+      // Lets <MDXProvider> in BlogContent supply <Rating /> and the lazy <img> to every post.
+      providerImportSource: "@mdx-js/react",
       remarkPlugins: [
         remarkFrontmatter,
         remarkMdxFrontmatter,

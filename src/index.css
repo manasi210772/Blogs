@@ -211,18 +211,17 @@ body {
     color: hsl(var(--muted-foreground));
   }
 
-  /* Scrapbook framing: thick warm border, small radius, no shadows (some posts still ask for them). */
+  /* Photos fill the column (capped in height) with a thin frame; no shadows (some posts still ask). */
   .prose img,
   .prose video {
-    max-height: 400px;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
     object-fit: cover;
     margin-inline: auto;
     display: block;
-    border: 6px solid hsl(var(--card));
+    border: 1px solid hsl(var(--border));
     border-radius: 12px !important;
     box-shadow: none !important;
-    outline: 1px solid hsl(var(--border));
   }
 }
