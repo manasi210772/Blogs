@@ -9,6 +9,7 @@
     "build": "vite build",
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "vite preview",
+    "lint": "eslint src",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
