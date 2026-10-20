@@ -7,7 +7,8 @@ import { getTagColorClass } from "../utils/tagColors";
 import { fadeUp, inView } from "../lib/motion";
 import { Stagger, StaggerItem } from "./Reveal";
 
-// Every top-level MDX block fades up as it scrolls into view.
+// Headings, quotes and figures fade up as they scroll into view. Paragraphs and lists render
+// immediately so the text can be read before JavaScript finishes loading.
 const reveal = {
   variants: fadeUp,
   initial: "hidden",
@@ -19,12 +20,8 @@ const components = {
   h1: (props: object) => <motion.h1 {...reveal} {...props} />,
   h2: (props: object) => <motion.h2 {...reveal} {...props} />,
   h3: (props: object) => <motion.h3 {...reveal} {...props} />,
-  p: (props: object) => <motion.p {...reveal} {...props} />,
-  ul: (props: object) => <motion.ul {...reveal} {...props} />,
-  ol: (props: object) => <motion.ol {...reveal} {...props} />,
   blockquote: (props: object) => <motion.blockquote {...reveal} {...props} />,
   figure: (props: object) => <motion.figure {...reveal} {...props} />,
-  div: (props: object) => <motion.div {...reveal} {...props} />,
 };
 
 const BlogContent = ({ Post, slug }: { Post: ComponentType; slug: string }) => {
