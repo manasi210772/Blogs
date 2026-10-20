@@ -44,8 +44,8 @@
     --glow: 0.14;                     /* strength of the background terracotta glow */
 
     --scrollbar-track: #f2eae0;
-    --scrollbar-thumb: #d97736;
-    --scrollbar-thumb-hover: #bf5e1e;
+    --scrollbar-thumb: #a65017;       /* same deep terracotta as the buttons */
+    --scrollbar-thumb-hover: #893e10;
   }
 
   html {
@@ -85,7 +85,14 @@
   }
 }
 
-/* MAIN scrollbar */
+/* MAIN scrollbar. Chrome and Safari use the ::-webkit-scrollbar rules; Firefox uses scrollbar-color
+   (Chrome would ignore the webkit rules if scrollbar-color were set there too). */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 10px;
