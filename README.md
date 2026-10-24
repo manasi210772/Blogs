@@ -6,7 +6,7 @@ Live site: https://manasi210772.github.io/Blogs/
 
 ## Features
 
-- **Landing page**: hero photo grid, why-read, latest stories, numbers and FAQ, all driven by the post data.
+- **Landing page**: hero photo grid, a short "Why I write" note and the latest stories, driven by the post data. One route into the blog: the hero button (plus "Stories" in the navbar).
 - **Food blog** (`/blogs/food`): story cards with cover photos, category filters and a Back/Home header.
 - **MDX posts**: each post is a Markdown file in `src/blogs/` with a few JSX helpers (`<Rating value="8" />`). Posts are lazy-loaded one at a time.
 - **Light theme only**: warm terracotta and cream palette (Fraunces + DM Sans). There is no dark mode.

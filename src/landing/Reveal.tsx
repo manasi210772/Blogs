@@ -1,4 +1,4 @@
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps } from "react";
 import { motion } from "framer-motion";
 import { fadeUp, inView, stagger } from "./motion";
 
@@ -9,41 +9,9 @@ export function Reveal(props: DivProps) {
   return <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={inView} {...props} />;
 }
 
-// Reveals its StaggerItem children one after another on scroll.
+// Reveals its children one after another on scroll.
 export function Stagger({ gap = 0.1, ...props }: DivProps & { gap?: number }) {
   return (
     <motion.div variants={stagger(gap)} initial="hidden" whileInView="visible" viewport={inView} {...props} />
-  );
-}
-
-export function StaggerItem(props: DivProps) {
-  return <motion.div variants={fadeUp} {...props} />;
-}
-
-export function SectionHeading({
-  eyebrow,
-  title,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  children?: ReactNode;
-}) {
-  return (
-    <Stagger gap={0.1} className="mb-xl max-w-xl text-left">
-      <StaggerItem>
-        <p className="mb-sm text-small font-semibold uppercase tracking-wider text-walnut">
-          {eyebrow}
-        </p>
-      </StaggerItem>
-      <StaggerItem>
-        <h2 className="mb-md text-h2 text-ink md:text-h1">{title}</h2>
-      </StaggerItem>
-      {children && (
-        <StaggerItem>
-          <p className="text-body text-walnut">{children}</p>
-        </StaggerItem>
-      )}
-    </Stagger>
   );
 }
