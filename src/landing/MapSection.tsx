@@ -15,11 +15,7 @@ export default function MapSection() {
   return (
     <section className="mx-auto max-w-6xl px-md py-xl sm:px-lg">
       <Reveal>
-        <h2 className="mb-sm text-h2 text-ink">Where I've eaten</h2>
-        <p className="mb-lg max-w-2xl text-body text-walnut">
-          Tap a triangle to read about that place. Use + and − (or click the map and scroll) to zoom;
-          Manas Jatra is in Satara, so zoom out to find it.
-        </p>
+        <h2 className="mb-lg text-h2 text-ink">Where I've eaten</h2>
       </Reveal>
 
       {/* isolate keeps Leaflet's high z-index layers under the sticky navbar. */}
