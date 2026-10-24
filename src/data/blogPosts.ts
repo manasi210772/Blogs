@@ -18,8 +18,8 @@ const posts: BlogPost[] = [
   {
     slug: "frullato",
     place: "Frullato",
-    cover: "Media/frullato-brownie-rocks.jpeg",
-    coverAlt: "Brownie Rocks Frullato dessert",
+    cover: "Media/frullato-classic-oreo.jpg",
+    coverAlt: "Classic Oreo Frullato dessert",
     title: "A Sweet, Chocolatey Experience with Frullato",
     description:
       "Trying three Frullato desserts — Classic Oreo, Brownie Rocks and Chocolava — and exploring their creamy, chocolatey flavours.",
