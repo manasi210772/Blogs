@@ -6,7 +6,7 @@ Live site: https://manasi210772.github.io/Blogs/
 
 ## Features
 
-- **Landing page**: hero photo grid, a short "Why I write" note and the latest stories, driven by the post data. One route into the blog: the hero button (plus "Stories" in the navbar).
+- **Landing page**: hero photo grid, a short "Why I write" note and the latest stories, driven by the post data, plus a map of every place (green triangle for pure veg, brown for non-veg; locations in `src/data/places.ts`). One route into the blog: the hero button (plus "Stories" in the navbar).
 - **Food blog** (`/blogs/food`): story cards with cover photos, category filters and a Back/Home header.
 - **MDX posts**: each post is a Markdown file in `src/blogs/` with a few JSX helpers (`<Rating value="8" />`). Posts are lazy-loaded one at a time.
 - **Light theme only**: warm terracotta and cream palette (Fraunces + DM Sans). There is no dark mode.
@@ -21,7 +21,7 @@ Live site: https://manasi210772.github.io/Blogs/
 
 1. Add the photos to `public/Media/`. Resize them to about 1600px on the long side first; phone originals are several MB and carry GPS location data in their EXIF.
 2. Create `src/blogs/<name>.mdx` with `title`, `date` and `description` frontmatter. Use `- ` for lists and `<Rating value="8" />` for ratings. Give each `<img>` its `width` and `height`.
-3. Add an entry to `src/data/blogPosts.ts` (`slug`, `place`, `tags`, `readTime`, optional `cover`). The slug must match the file name once dashes, spaces and case are ignored (`chimichurri-2` matches `Chimichurri2.mdx`).
+3. Add an entry to `src/data/blogPosts.ts` (`slug`, `place`, `tags`, `readTime`, optional `cover`). For a new place, add its coordinates to `src/data/places.ts` (`veg: true` if it is pure veg) so it shows on the map. The slug must match the file name once dashes, spaces and case are ignored (`chimichurri-2` matches `Chimichurri2.mdx`).
 4. The landing page, story list, sitemap and RSS feed pick the post up automatically.
 
 ## Tech stack
