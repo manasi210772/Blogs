@@ -21,9 +21,19 @@ const nonVegIcon = triangle(NON_VEG_COLOR);
 
 type Spot = Place & { name: string; posts: BlogPost[] };
 
-const spots: Spot[] = Object.entries(places)
-  .map(([name, p]) => ({ ...p, name, posts: blogPosts.filter((b) => b.place === name) }))
-  .filter((s) => s.posts.length > 0);
+// One pin per location: places that share coordinates (same building) share a pin.
+const spots: Spot[] = [];
+for (const [name, p] of Object.entries(places)) {
+  const posts = blogPosts.filter((b) => b.place === name);
+  if (posts.length === 0) continue;
+  const same = spots.find((s) => s.lat === p.lat && s.lng === p.lng);
+  if (same) {
+    same.name += ` & ${name}`;
+    same.posts.push(...posts);
+  } else {
+    spots.push({ ...p, name, posts });
+  }
+}
 
 // Open on Thane; Satara is far enough away that including it would zoom the map right out.
 const thaneBounds = L.latLngBounds(spots.filter((s) => s.lat > 18.5).map((s) => [s.lat, s.lng]));
