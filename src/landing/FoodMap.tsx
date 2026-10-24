@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, Tooltip, useMapEvents } from "react-leaflet";
 import { Link, useNavigate } from "react-router-dom";
 import { blogPosts, type BlogPost } from "../data/blogPosts";
 import { NON_VEG_COLOR, VEG_COLOR, places, type Place } from "../data/places";
@@ -28,6 +28,15 @@ const spots: Spot[] = Object.entries(places)
 // Open on Thane; Satara is far enough away that including it would zoom the map right out.
 const thaneBounds = L.latLngBounds(spots.filter((s) => s.lat > 18.5).map((s) => [s.lat, s.lng]));
 
+// The wheel scrolls the page until you click the map; then it zooms, until the mouse leaves.
+function WheelZoomOnClick() {
+  const map = useMapEvents({
+    click: () => map.scrollWheelZoom.enable(),
+    mouseout: () => map.scrollWheelZoom.disable(),
+  });
+  return null;
+}
+
 export default function FoodMap() {
   const navigate = useNavigate();
 
@@ -42,6 +51,7 @@ export default function FoodMap() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <WheelZoomOnClick />
       {spots.map((s) => {
         const single = s.posts.length === 1;
         return (

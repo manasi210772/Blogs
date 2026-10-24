@@ -17,7 +17,8 @@ export default function MapSection() {
       <Reveal>
         <h2 className="mb-sm text-h2 text-ink">Where I've eaten</h2>
         <p className="mb-lg max-w-2xl text-body text-walnut">
-          Tap a triangle to read about that place. Manas Jatra is in Satara, so zoom out to find it.
+          Tap a triangle to read about that place. Use + and − (or click the map and scroll) to zoom;
+          Manas Jatra is in Satara, so zoom out to find it.
         </p>
       </Reveal>
 
