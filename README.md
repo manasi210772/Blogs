@@ -15,7 +15,7 @@ Live site: https://manasi210772.github.io/Blogs/
 
 ## Blog content
 
-11 posts under **Food Blogs** (`/blogs/food`), newest first (sorted by date in code).
+12 posts under **Food Blogs** (`/blogs/food`), newest first (sorted by date in code).
 
 ## Adding a post
 
