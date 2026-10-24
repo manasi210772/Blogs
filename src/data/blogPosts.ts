@@ -20,7 +20,7 @@ const posts: BlogPost[] = [
     place: "Frullato",
     cover: "Media/frullato-brownie-rocks.jpeg",
     coverAlt: "Brownie Rocks Frullato dessert",
-    title: "A Sweet, Chocolatey Experience with Frullato 🍫",
+    title: "A Sweet, Chocolatey Experience with Frullato",
     description:
       "Trying three Frullato desserts — Classic Oreo, Brownie Rocks and Chocolava — and exploring their creamy, chocolatey flavours.",
     date: "2026-10-23",
