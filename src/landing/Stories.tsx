@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { STATS, formatDate, posts, type Post } from "./posts";
+import { formatDate, posts, type Post } from "./posts";
 import { colors, fadeUp, hoverTransition, lift, press } from "./motion";
-import { Reveal, SectionHeading, Stagger } from "./Reveal";
+import { Reveal, Stagger } from "./Reveal";
 
 const MotionLink = motion.create(Link);
 
@@ -54,35 +54,15 @@ function PostCard({ post, large = false }: { post: Post; large?: boolean }) {
 export default function Stories() {
   return (
     <section id="stories" className="mx-auto max-w-6xl px-md py-xl sm:px-lg">
-      <SectionHeading eyebrow="Latest stories" title="Fresh from the table" />
+      <Reveal>
+        <h2 className="mb-lg text-h2 text-ink">Latest stories</h2>
+      </Reveal>
 
       <Stagger gap={0.12} className="grid gap-md md:grid-cols-[1.3fr_1fr]">
         {posts.map((p, i) => (
           <PostCard key={p.slug} post={p} large={i === 0} />
         ))}
       </Stagger>
-
-      {/* Espresso block: the strongest contrast on the page, so the way into the blog is hard to miss. */}
-      <Reveal className="mt-lg">
-        <div className="flex flex-col gap-lg rounded-[12px] bg-ink p-lg md:flex-row md:items-center md:justify-between md:p-xl">
-          <div className="text-left">
-            <h3 className="mb-sm text-h2 text-canvas">Hungry for more?</h3>
-            <p className="max-w-md text-body text-canvas/80">
-              {STATS.stories} stories and counting, from a ₹20 sugarcane juice to a fine-dining night.
-            </p>
-          </div>
-          <MotionLink
-            to="/blogs/food"
-            whileHover={{ ...lift, backgroundColor: colors.accent }}
-            whileTap={press}
-            transition={hoverTransition}
-            className="inline-flex shrink-0 items-center justify-center gap-sm rounded-[8px] bg-canvas px-xl py-md text-h3 font-semibold text-ink"
-          >
-            Browse all stories
-            <ArrowRight size={20} strokeWidth={2} aria-hidden />
-          </MotionLink>
-        </div>
-      </Reveal>
     </section>
   );
 }

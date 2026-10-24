@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Cake, Coffee, Soup, Utensils } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { colors, ease, fadeUp, hoverTransition, lift, press, stagger } from "./motion";
 
 const MotionLink = motion.create(Link);
@@ -13,13 +13,6 @@ const rise = {
   hidden: { y: 16 },
   visible: { y: 0, transition: { duration: 0.55, ease } },
 };
-
-const TOPICS = [
-  { Icon: Utensils, label: "Street food" },
-  { Icon: Coffee, label: "Cafés" },
-  { Icon: Soup, label: "Thalis" },
-  { Icon: Cake, label: "Desserts" },
-];
 
 // Left: tall Blue Tokai collage. Right: three landscape photos stacked. The column widths are set so
 // both sides end at the same height and no photo is cropped (portrait 899x1599; landscapes 1280x804,
@@ -60,13 +53,6 @@ export default function Hero() {
     <section id="top" className="mx-auto max-w-6xl overflow-x-clip px-md pb-lg pt-lg sm:px-lg md:pt-lg">
       <div className="grid items-center gap-xl md:grid-cols-[1.1fr_0.9fr] md:gap-lg">
         <motion.div variants={stagger(0.12)} initial="hidden" animate="visible" className="text-left">
-          <motion.p
-            variants={fadeUp}
-            className="mb-md text-small font-semibold uppercase tracking-wider text-walnut"
-          >
-            A food &amp; culture journal
-          </motion.p>
-
           <motion.h1
             variants={rise}
             className="mb-md text-h1 text-ink md:text-display"
@@ -75,40 +61,22 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={fadeUp} className="mb-lg max-w-md text-body text-walnut">
-            Honest reviews and stories for people who chase unforgettable meals, café corners and
-            hidden culinary gems. One bite at a time.
+            I'm Manasi. Fuelled by MasterChef Australia and Nick DiGiovanni, I keep mental notes of
+            every meal worth remembering. This is where those notes live.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mb-lg flex flex-wrap items-center gap-md">
-            <motion.a
-              href="#stories"
+          <motion.div variants={fadeUp}>
+            <MotionLink
+              to="/blogs/food"
               whileHover={{ ...lift, backgroundColor: colors.accentHover }}
               whileTap={press}
               transition={hoverTransition}
               className="inline-flex items-center gap-sm rounded-[8px] bg-primary px-lg py-md font-semibold text-canvas"
             >
-              <Utensils size={18} strokeWidth={1.75} aria-hidden />
-              Start reading
-            </motion.a>
-            <MotionLink
-              to="/blogs/food"
-              whileHover={{ ...lift, borderColor: colors.accent, color: colors.accentHover }}
-              whileTap={press}
-              transition={hoverTransition}
-              className="inline-flex items-center rounded-[8px] border-[1.5px] border-walnut px-lg py-md font-semibold text-ink"
-            >
-              Browse all stories
+              Read my stories
+              <ArrowRight size={18} strokeWidth={2} aria-hidden />
             </MotionLink>
           </motion.div>
-
-          <motion.ul variants={fadeUp} className="flex flex-wrap gap-x-lg gap-y-sm text-small text-walnut">
-            {TOPICS.map(({ Icon, label }) => (
-              <li key={label} className="inline-flex items-center gap-xs">
-                <Icon size={14} strokeWidth={1.75} aria-hidden />
-                {label}
-              </li>
-            ))}
-          </motion.ul>
         </motion.div>
 
         <div className="mx-auto grid w-full max-w-md grid-cols-[1.28fr_1fr] gap-md md:max-w-none">
