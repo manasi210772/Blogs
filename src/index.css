@@ -218,13 +218,14 @@ body {
     color: hsl(var(--muted-foreground));
   }
 
-  /* Photos fill the column (capped in height) with a thin frame; no shadows (some posts still ask). */
+  /* Photos are shown whole (capped in height, so tall ones get narrower) with a thin frame; no shadows (some posts still ask). */
   .prose img,
   .prose video {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     max-height: 520px;
-    object-fit: cover;
+    object-fit: contain;
     margin-inline: auto;
     display: block;
     border: 1px solid hsl(var(--border));
