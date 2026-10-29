@@ -29,8 +29,8 @@ const PostNav = ({ slug }: { slug: string }) => {
   const current = blogPosts[i];
   const cards: { label: string; post: BlogPost }[] = [];
   // blogPosts is newest first: i + 1 was published before this post, i - 1 after it.
-  if (blogPosts[i + 1]) cards.push({ label: "← Previous story", post: blogPosts[i + 1] });
-  if (blogPosts[i - 1]) cards.push({ label: "Next story →", post: blogPosts[i - 1] });
+  if (blogPosts[i + 1]) cards.push({ label: "Previous story", post: blogPosts[i + 1] });
+  if (blogPosts[i - 1]) cards.push({ label: "Next story", post: blogPosts[i - 1] });
 
   const shown = new Set(cards.map((c) => c.post.slug).concat(slug));
   for (const p of blogPosts) {
