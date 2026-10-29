@@ -3,10 +3,12 @@ import { blogPosts, type BlogPost } from "../data/blogPosts";
 import { formatDate } from "../lib/categories";
 
 // Blog posts are newest first, so "next" is the older story and "previous" the newer one.
-const NavCard = ({ label, post }: { label: string; post: BlogPost }) => (
+const NavCard = ({ label, post, wide }: { label: string; post: BlogPost; wide?: boolean }) => (
   <Link
     to={post.path}
-    className="group flex flex-col rounded-lg border-[1.5px] border-border bg-card p-5 hover:border-decor"
+    className={`group flex flex-col rounded-lg border-[1.5px] border-border bg-card p-5 hover:border-decor ${
+      wide ? "sm:col-span-2" : ""
+    }`}
   >
     <span className="mb-1 text-small font-semibold uppercase tracking-wider text-muted-foreground">
       {label}
@@ -20,38 +22,40 @@ const NavCard = ({ label, post }: { label: string; post: BlogPost }) => (
   </Link>
 );
 
-// End-of-post navigation: newer/older story, then up to two stories that share a tag.
+// End-of-post navigation: one "Keep reading" grid with the newer/older story and up to two stories
+// that share a tag. With an odd number of cards the last one spans the row, so no slot is left empty
+// (the newest and oldest posts only have one neighbour).
 const PostNav = ({ slug }: { slug: string }) => {
   const i = blogPosts.findIndex((p) => p.slug === slug);
   if (i === -1) return null;
 
-  const newer = blogPosts[i - 1];
-  const older = blogPosts[i + 1];
   const current = blogPosts[i];
-  const shown = new Set([slug, newer?.slug, older?.slug]);
-  const related = blogPosts
-    .filter((p) => !shown.has(p.slug) && p.tags.some((t) => current.tags.includes(t)))
-    .slice(0, 2);
+  const cards: { label: string; post: BlogPost }[] = [];
+  if (blogPosts[i - 1]) cards.push({ label: "Newer story", post: blogPosts[i - 1] });
+  if (blogPosts[i + 1]) cards.push({ label: "Older story", post: blogPosts[i + 1] });
+
+  const shown = new Set(cards.map((c) => c.post.slug).concat(slug));
+  for (const p of blogPosts) {
+    if (cards.length >= 4) break;
+    const shared = p.tags.find((t) => current.tags.includes(t));
+    if (shared && !shown.has(p.slug)) cards.push({ label: `More ${shared}`, post: p });
+  }
+
+  if (cards.length === 0) return null;
 
   return (
-    <nav aria-label="More stories" className="mx-auto mt-16 max-w-2xl border-t border-border pt-8">
-      {(newer || older) && (
-        <div className="grid gap-4 sm:grid-cols-2">
-          {newer ? <NavCard label="Newer story" post={newer} /> : <span />}
-          {older ? <NavCard label="Older story" post={older} /> : <span />}
-        </div>
-      )}
-
-      {related.length > 0 && (
-        <div className="mt-8">
-          <h2 className="mb-3 text-h3 text-text">More like this</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {related.map((p) => (
-              <NavCard key={p.slug} label={p.tags[0]} post={p} />
-            ))}
-          </div>
-        </div>
-      )}
+    <nav aria-label="Keep reading" className="mx-auto mt-16 max-w-2xl border-t border-border pt-8">
+      <h2 className="mb-3 text-h3 text-text">Keep reading</h2>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {cards.map((c, n) => (
+          <NavCard
+            key={c.post.slug}
+            label={c.label}
+            post={c.post}
+            wide={cards.length % 2 === 1 && n === cards.length - 1}
+          />
+        ))}
+      </div>
     </nav>
   );
 };
