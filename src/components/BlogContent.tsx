@@ -8,7 +8,7 @@ import { usePageMeta } from "../lib/usePageMeta";
 import { Stagger, StaggerItem } from "./Reveal";
 import PostNav from "./PostNav";
 
-// <Rating value="8" /> in a post renders as a real element instead of a "### ⭐ Rating" heading.
+// <Rating value="8" /> in a post renders as a real element instead of a star-emoji heading.
 const Rating = ({ value, label = "Rating" }: { value: string; label?: string }) => (
   <p
     className="my-4 flex items-center gap-2 font-semibold text-text"
