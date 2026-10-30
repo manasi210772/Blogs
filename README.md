@@ -56,4 +56,3 @@ Live site: https://manasi210772.github.io/Blogs/
 - `src/blogs/`: MDX posts
 - `src/data/blogPosts.ts`: post metadata, the single source of truth
 - `src/data/places.ts`: map coordinates and veg/non-veg for each place
-- `landing/`: a separate Next.js 14 version of the landing page, kept for reference; it is not part of the deployed site
