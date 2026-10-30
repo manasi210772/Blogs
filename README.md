@@ -26,6 +26,18 @@ Live site: https://manasi210772.github.io/Blogs/
 3. Add an entry to `src/data/blogPosts.ts` (`slug`, `place`, `tags`, `readTime`, optional `cover`). The slug must match the file name once dashes, spaces and case are ignored (`chimichurri-2` matches `Chimichurri2.mdx`). Tags drive the blog filters and the "More … like this" cards.
 4. For a new place, add it to `src/data/places.ts` under the same name as `place`: its `lat`/`lng` (from Google Maps: the numbers after `!3d` and `!4d` in the place's URL), a short `area`, and `veg: true` if it is pure veg. Places with identical coordinates share a pin.
 5. The landing page, story list, map, sitemap and RSS feed pick the post up automatically.
+6. Run `npm run check:posts` (it also runs on every build and deploy, and stops them if something is wrong).
+
+### Post rules (checked automatically)
+
+- Headings are `## <u>Title</u>` (or `### <u>Title</u>`): no bold, emoji or other markup.
+- The list of dishes goes under `## <u>What We Ordered</u>` (or "What I Ordered"), not in the introduction.
+- Each dish gets its own heading, with `<Rating value="8" />` on its own line after the description. Never put a rating or indented text inside a bullet list.
+- No emojis anywhere; the rating star comes from `<Rating />` (use `label="Overall Experience"` for an overall score).
+- Spellings: "chocolatey", "Shraavan".
+- Every `<img>` has `alt`, `width` and `height`, and the file exists in `public/Media/`.
+- No sentence twice in one post. The same number of minutes, people or rupees twice gets a warning, since that usually means a repeated point.
+- Every post has an entry in `blogPosts.ts`, and every place has a location in `places.ts`.
 
 ## Tech stack
 
@@ -44,9 +56,10 @@ Live site: https://manasi210772.github.io/Blogs/
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Start the dev server |
-| `npm run build` | Build to `dist/`, then run `scripts/postbuild.mjs` (per-page HTML, sitemap, RSS) |
+| `npm run build` | Check the posts, build to `dist/`, then run `scripts/postbuild.mjs` (per-page HTML, sitemap, RSS) |
 | `npm run deploy` | Build and publish `dist/` to the `gh-pages` branch (GitHub Pages) |
 | `npm run lint` | Run ESLint on `src/` |
+| `npm run check:posts` | Check all posts against the post rules (runs before every build) |
 
 ## Project layout
 

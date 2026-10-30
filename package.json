@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "check:posts": "node scripts/check-posts.mjs",
+    "prebuild": "node scripts/check-posts.mjs",
     "build": "vite build",
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "vite preview",
