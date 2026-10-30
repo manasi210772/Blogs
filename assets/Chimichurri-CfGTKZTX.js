@@ -1,20 +1,19 @@
-import{u as r,j as e}from"./index-CsTmbFtk.js";const a={title:"My First Dimsum & Ramen Experience at Chimichurri – The Asian Kitchen",date:"2026-07-10",description:"A memorable first experience trying dimsum, ramen, and tofu at Chimichurri – The Asian Kitchen."};function t(n){const i={h2:"h2",h3:"h3",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...n.components},{Rating:s}=i;return s||h("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(i.h2,{children:e.jsx("u",{children:"Introduction"})}),`
+import{u as r,j as e}from"./index-SbS4xxIs.js";const a={title:"My First Dimsum & Ramen Experience at Chimichurri – The Asian Kitchen",date:"2026-07-10",description:"A memorable first experience trying dimsum, ramen, and tofu at Chimichurri – The Asian Kitchen."};function t(n){const i={h2:"h2",h3:"h3",li:"li",p:"p",strong:"strong",ul:"ul",...r(),...n.components},{Rating:s}=i;return s||h("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(i.h2,{children:e.jsx("u",{children:"Introduction"})}),`
 `,e.jsxs(i.p,{children:["On ",e.jsx(i.strong,{children:"10th July 2026"}),", I visited ",e.jsx(i.strong,{children:"Chimichurri – The Asian Kitchen"})," to explore some Asian cuisine. Since it was my first time there, I decided to try a few dishes that I had never eaten before."]}),`
+`,e.jsxs(i.p,{children:["As it turned out, this meal introduced me to ",e.jsx(i.strong,{children:"dimsum, ramen, and even tofu"})," for the very first time."]}),`
+`,e.jsx(i.h2,{children:e.jsx("u",{children:"The Ambience"})}),`
+`,e.jsxs(i.p,{children:["Even though it was a ",e.jsx(i.strong,{children:"Friday evening"}),", we were fortunate enough to get a table for three without having to wait, despite not having a reservation."]}),`
+`,e.jsx(i.p,{children:"The restaurant was completely packed, which wasn't surprising considering the lively atmosphere."}),`
+`,e.jsxs(i.p,{children:["The interiors followed a beautiful ",e.jsx(i.strong,{children:"Japanese and Chinese-inspired theme"}),", making the place feel warm, aesthetic, and perfect for Asian dining."]}),`
+`,e.jsxs("figure",{className:"my-6",children:[e.jsxs("div",{className:"grid grid-cols-2 gap-4",children:[e.jsx("img",{src:"/Blogs/Media/chimichurri-ambience-1.jpeg",width:900,height:1600,alt:"Chimichurri ambience"}),e.jsx("img",{src:"/Blogs/Media/chimichurri-ambience-2.jpeg",width:900,height:1600,alt:"Chimichurri interiors"})]}),e.jsx("figcaption",{className:"text-center text-xs text-muted-foreground mt-2 italic",children:e.jsx(i.p,{children:"The Japanese and Chinese-inspired interiors at Chimichurri – The Asian Kitchen."})})]}),`
+`,e.jsx(i.h2,{children:e.jsx("u",{children:"What We Ordered"})}),`
 `,e.jsx(i.p,{children:"We ordered:"}),`
 `,e.jsxs(i.ul,{children:[`
 `,e.jsx(i.li,{children:"Chimichurri Chicken Dimsum (6 pieces)"}),`
 `,e.jsx(i.li,{children:"Chicken Chilli Garlic Ramen"}),`
 `,e.jsx(i.li,{children:"Veg Chilli Garlic Ramen"}),`
 `]}),`
-`,e.jsxs(i.p,{children:["As it turned out, this meal introduced me to ",e.jsx(i.strong,{children:"dimsum, ramen, and even tofu"})," for the very first time."]}),`
-`,e.jsx(i.h2,{children:e.jsx("u",{children:"The Ambience"})}),`
-`,e.jsxs(i.p,{children:["Even though it was a ",e.jsx(i.strong,{children:"Friday evening"}),", we were fortunate enough to get a table for three without having to wait, despite not having a reservation."]}),`
-`,e.jsx(i.p,{children:"The restaurant was completely packed, which wasn't surprising considering the lively atmosphere."}),`
-`,e.jsxs(i.p,{children:["The interiors followed a beautiful ",e.jsx(i.strong,{children:"Japanese and Chinese-inspired theme"}),", making the place feel warm, aesthetic, and perfect for Asian dining."]}),`
-`,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/chimichurri-ambience-1.jpeg",width:900,height:1600,alt:"Chimichurri ambience",className:"rounded-2xl shadow-md"})}),`
-`,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/chimichurri-ambience-2.jpeg",width:900,height:1600,alt:"Chimichurri interiors",className:"rounded-2xl shadow-md"})}),`
-`,e.jsx("p",{className:"text-center text-sm text-muted-foreground",children:e.jsx(i.p,{children:"The Japanese and Chinese-inspired interiors at Chimichurri – The Asian Kitchen."})}),`
-`,e.jsxs(i.h2,{children:["🥟 ",e.jsx("u",{children:"Chimichurri Chicken Dimsum"})]}),`
+`,e.jsx(i.h2,{children:e.jsx("u",{children:"Chimichurri Chicken Dimsum"})}),`
 `,e.jsxs(i.p,{children:["The first dish to arrive was the ",e.jsx(i.strong,{children:"Chimichurri Chicken Dimsum"}),"."]}),`
 `,e.jsxs(i.p,{children:["This was my ",e.jsx(i.strong,{children:"first time trying dimsum"}),", so I wasn't quite sure what to expect."]}),`
 `,e.jsxs(i.p,{children:["Inside, the dimsum was filled with ",e.jsx(i.strong,{children:"minced chicken"})," mixed with herbs and sauces. It was served piping hot, and the moment I took my first bite, it almost ",e.jsx(i.strong,{children:"melted in my mouth"}),"."]}),`
@@ -22,7 +21,7 @@ import{u as r,j as e}from"./index-CsTmbFtk.js";const a={title:"My First Dimsum &
 `,e.jsx(s,{value:"8"}),`
 `,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/chimichurri-dimsum.jpeg",width:1200,height:1600,alt:"Chimichurri Chicken Dimsum",className:"rounded-2xl shadow-md"})}),`
 `,e.jsx("p",{className:"text-center text-sm text-muted-foreground",children:e.jsx(i.p,{children:"Chimichurri Chicken Dimsum."})}),`
-`,e.jsxs(i.h2,{children:["🍜 ",e.jsx("u",{children:"Chicken Chilli Garlic Ramen"})]}),`
+`,e.jsx(i.h2,{children:e.jsx("u",{children:"Chicken Chilli Garlic Ramen"})}),`
 `,e.jsxs(i.p,{children:["Next came the ",e.jsx(i.strong,{children:"Chicken Chilli Garlic Ramen"}),", another first for me."]}),`
 `,e.jsx(i.p,{children:"The portion size was huge, so we requested the staff to divide it among us."}),`
 `,e.jsx(i.p,{children:"The bowl contained:"}),`

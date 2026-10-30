@@ -1,4 +1,4 @@
-import{u as s,j as e}from"./index-CsTmbFtk.js";const h={title:"Trying the Viral London Slice at Mahabi Cafe Patisserie Gelato",date:"2026-08-23",description:"A social-media-inspired visit to Mahabi Cafe Patisserie Gelato in Manpada, Thane, to try the viral London Slice and my first macarons."};function r(t){const n={h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...s(),...t.components},{Rating:a}=n;return a||i("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
+import{u as s,j as e}from"./index-SbS4xxIs.js";const h={title:"Trying the Viral London Slice at Mahabi Cafe Patisserie Gelato",date:"2026-08-23",description:"A social-media-inspired visit to Mahabi Cafe Patisserie Gelato in Manpada, Thane, to try the viral London Slice and my first macarons."};function r(t){const n={h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...s(),...t.components},{Rating:a}=n;return a||i("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
 `,e.jsxs(n.p,{children:["After getting influenced by social media reels, I decided to try ",e.jsx(n.strong,{children:"Mahabi Cafe Patisserie Gelato"})," at Manpada, Thane."]}),`
 `,e.jsx(n.p,{children:"The shop is located in a very isolated place, where there isn't much development in the surrounding area."}),`
 `,e.jsx(n.p,{children:"Before entering the shop, I noticed a few chairs and tables outside, arranged in a very small space."}),`
@@ -27,7 +27,7 @@ import{u as s,j as e}from"./index-CsTmbFtk.js";const h={title:"Trying the Viral 
 `,e.jsx(n.p,{children:"But if you visit Mahabi, you can definitely give their Tiramisu a try!"}),`
 `,e.jsx(n.h2,{children:e.jsx("u",{children:"Viral London Slice"})}),`
 `,e.jsxs(n.p,{children:["This was ",e.jsx(n.strong,{children:"my favourite"})," out of everything I bought!"]}),`
-`,e.jsxs(n.p,{children:["The London Slice was ",e.jsx(n.strong,{children:"very creamy and very chocolaty"}),". The outer chocolate layer was a little bitter, but the inner layers were delicious."]}),`
+`,e.jsxs(n.p,{children:["The London Slice was ",e.jsx(n.strong,{children:"very creamy and very chocolatey"}),". The outer chocolate layer was a little bitter, but the inner layers were delicious."]}),`
 `,e.jsxs(n.p,{children:["The inside had layers of ",e.jsx(n.strong,{children:"soft chocolate cake sponge and chocolate cream"}),". The sponge was light and airy, which I really loved."]}),`
 `,e.jsx(n.p,{children:"What made the texture even better was that the sponge had soaked up the moisture from the cream. This made the overall texture of the London Slice even more enjoyable."}),`
 `,e.jsx(a,{value:"9"}),`

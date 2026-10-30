@@ -1,4 +1,4 @@
-import{u as s,j as e}from"./index-CsTmbFtk.js";const l={title:"My First Visit to Blue Tokai: Coffee, Conversations & a Korean Bun",date:"2026-06-18",description:"A first-time experience at Blue Tokai Coffee Roasters, featuring a comforting hot mocha and a flavorful Jalapeño & Cheese Korean Bun."};function o(t){const n={h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...s(),...t.components},{Rating:i}=n;return i||a("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
+import{u as s,j as e}from"./index-SbS4xxIs.js";const l={title:"My First Visit to Blue Tokai: Coffee, Conversations & a Korean Bun",date:"2026-06-18",description:"A first-time experience at Blue Tokai Coffee Roasters, featuring a comforting hot mocha and a flavorful Jalapeño & Cheese Korean Bun."};function o(t){const n={h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...s(),...t.components},{Rating:i}=n;return i||a("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
 `,e.jsxs(n.p,{children:["I recently visited ",e.jsx(n.strong,{children:"Blue Tokai Coffee Roasters"})," for the first time. Since it was my first visit, I was curious not only about the food and beverages but also about the overall cafe experience."]}),`
 `,e.jsx(n.h2,{children:e.jsx("u",{children:"The Ambience"})}),`
 `,e.jsxs(n.p,{children:["The first thing I noticed was that the cafe was quite ",e.jsx(n.strong,{children:"compact and busy"}),". Most people seemed to be there for work-related activities—attending online meetings, working on laptops, or writing notes."]}),`
@@ -11,13 +11,13 @@ import{u as s,j as e}from"./index-CsTmbFtk.js";const l={title:"My First Visit to
 `,e.jsx(n.li,{children:e.jsx(n.strong,{children:"Hot Mocha"})}),`
 `]}),`
 `,e.jsx(n.p,{children:"Since I had a sore throat from a cold, I specifically wanted something warm to drink."}),`
-`,e.jsxs(n.h2,{children:["☕ ",e.jsx("u",{children:"Hot Mocha"})]}),`
+`,e.jsx(n.h2,{children:e.jsx("u",{children:"Hot Mocha"})}),`
 `,e.jsxs(n.p,{children:["This was my first time trying a ",e.jsx(n.strong,{children:"Hot Mocha"}),", which is essentially a combination of coffee and hot chocolate."]}),`
 `,e.jsx(n.p,{children:"The drink was warm, comforting, and exactly what I needed that day. It felt hearty and soothing, especially because of my sore throat."}),`
 `,e.jsx(n.p,{children:"I even added some brown sugar, but the drink still had a slight bitterness to it. Thankfully, it wasn't unpleasant—in fact, the bitterness complemented the drink well and made it enjoyable."}),`
 `,e.jsx(i,{value:"9"}),`
 `,e.jsx(n.p,{children:"I would definitely order this again."}),`
-`,e.jsxs(n.h2,{children:["🥯 ",e.jsx("u",{children:"Jalapeño & Cheese Korean Bun"})]}),`
+`,e.jsx(n.h2,{children:e.jsx("u",{children:"Jalapeño & Cheese Korean Bun"})}),`
 `,e.jsxs(n.p,{children:["The ",e.jsx(n.strong,{children:"Jalapeño & Cheese Korean Bun"})," had a very interesting flavor profile."]}),`
 `,e.jsx(n.p,{children:"The bun itself was soft and easy to chew. Inside, the filling tasted somewhat like garlic butter and contained cheese, jalapeños, and other ingredients that worked really well together."}),`
 `,e.jsx(n.p,{children:"The combination of flavors was unique and enjoyable."}),`

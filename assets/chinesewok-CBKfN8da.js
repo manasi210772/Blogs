@@ -1,5 +1,5 @@
-import{u as i,j as e}from"./index-CsTmbFtk.js";const h={title:"A Vegetarian Detour That Led Me to Chinese Wok",date:"2026-08-22",description:"A search for an interesting vegetarian lunch at Lakeshore Mall led me to Chinese Wok, followed by a refreshing Oreo Frappe from McDonald's."};function r(t){const n={em:"em",h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...t.components},{Rating:s}=n;return s||o("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
-`,e.jsxs(n.p,{children:["On ",e.jsx(n.strong,{children:"22nd August 2026"}),", I visited ",e.jsx(n.strong,{children:"Lakeshore Mall"})," with my mother. I was planning to have lunch there, but there was one small restriction—I was observing ",e.jsx(n.strong,{children:"Shravan"}),", so I was supposed to eat only vegetarian food."]}),`
+import{u as i,j as e}from"./index-SbS4xxIs.js";const h={title:"A Vegetarian Detour That Led Me to Chinese Wok",date:"2026-08-22",description:"A search for an interesting vegetarian lunch at Lakeshore Mall led me to Chinese Wok, followed by a refreshing Oreo Frappe from McDonald's."};function r(t){const n={em:"em",h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...t.components},{Rating:s}=n;return s||o("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
+`,e.jsxs(n.p,{children:["On ",e.jsx(n.strong,{children:"22nd August 2026"}),", I visited ",e.jsx(n.strong,{children:"Lakeshore Mall"})," with my mother. I was planning to have lunch there, but there was one small restriction—I was observing ",e.jsx(n.strong,{children:"Shraavan"}),", so I was supposed to eat only vegetarian food."]}),`
 `,e.jsxs(n.p,{children:["Now, I have to admit that I'm ",e.jsx(n.strong,{children:"not exactly a fan of vegetarian meals"}),". But if I find something interesting, with ",e.jsx(n.strong,{children:"bold flavors"})," and something that isn't usually cooked at home, I am always willing to give it a try."]}),`
 `,e.jsxs(n.p,{children:["So naturally, my first thought was: ",e.jsx(n.strong,{children:"Domino's Pizza!"})]}),`
 `,e.jsx(n.p,{children:"I love pizzas that are loaded with vegetables, so I thought it would be a perfect vegetarian lunch."}),`
@@ -7,14 +7,14 @@ import{u as i,j as e}from"./index-CsTmbFtk.js";const h={title:"A Vegetarian Deto
 `,e.jsx(n.p,{children:"There went my pizza plan."}),`
 `,e.jsxs(n.p,{children:["My mother and I started walking around again, looking for some vegetarian fast food. That's when I spotted ",e.jsx(n.strong,{children:"Chinese Wok"}),"."]}),`
 `,e.jsx(n.p,{children:"I had been wanting to try Chinese Wok for quite some time, and thankfully, my mother agreed too. So we finally decided to give it a try."}),`
+`,e.jsx(n.p,{children:"And honestly, this unexpected change in plans turned out to be pretty good!"}),`
+`,e.jsx(n.h2,{children:e.jsx("u",{children:"What We Ordered"})}),`
 `,e.jsx(n.p,{children:"After going through the menu, we ordered:"}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Veg Spring Rolls"}),`
 `,e.jsx(n.li,{children:"Super Bowl – Manchurian Gravy with Hakka Noodles"}),`
 `,e.jsx(n.li,{children:"Super Bowl – Manchurian Gravy with Fried Rice"}),`
 `]}),`
-`,e.jsx(n.p,{children:"And honestly, this unexpected change in plans turned out to be pretty good!"}),`
-`,e.jsx(n.h2,{children:e.jsx("u",{children:"What We Ordered"})}),`
 `,e.jsxs(n.p,{children:["One thing I have to say right away—",e.jsx(n.strong,{children:"vegetarian food is definitely cheaper!"})]}),`
 `,e.jsxs(n.p,{children:["All three dishes together came to ",e.jsx(n.strong,{children:"under ₹500"}),", which I found quite reasonable."]}),`
 `,e.jsxs(n.p,{children:["Another thing I noticed was that ",e.jsx(n.strong,{children:"everything was served piping hot"}),". And I mean ",e.jsx(n.em,{children:"really"})," hot!"]}),`

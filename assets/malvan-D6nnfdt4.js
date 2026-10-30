@@ -1,4 +1,4 @@
-import{u as t,j as e}from"./index-CsTmbFtk.js";const l={title:"Finally, Shraavan Is Over! A Seafood Feast at Hotel Malvan",date:"2026-09-19",description:"After a month without non-veg, I finally celebrated the end of Shraavan with crab, surmai, ravas, rice bhakri and rice at Hotel Malvan in Panchpakhadi, Thane."};function s(a){const n={h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...t(),...a.components},{Rating:r}=n;return r||i("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
+import{u as t,j as e}from"./index-SbS4xxIs.js";const l={title:"Finally, Shraavan Is Over! A Seafood Feast at Hotel Malvan",date:"2026-09-19",description:"After a month without non-veg, I finally celebrated the end of Shraavan with crab, surmai, ravas, rice bhakri and rice at Hotel Malvan in Panchpakhadi, Thane."};function s(a){const n={h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...t(),...a.components},{Rating:r}=n;return r||i("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:e.jsx("u",{children:"Introduction"})}),`
 `,e.jsxs(n.p,{children:["In our culture, we have one month known as ",e.jsx(n.strong,{children:"Shraavan"}),", during which we are not supposed to eat non-veg."]}),`
 `,e.jsx(n.p,{children:"As someone who absolutely loves non-veg food, this is a very difficult month for me!"}),`
 `,e.jsxs(n.p,{children:["So, finally, ",e.jsx(n.strong,{children:"today our Shraavan month ended"}),", and we decided to celebrate by having lunch at a restaurant."]}),`
@@ -11,7 +11,6 @@ import{u as t,j as e}from"./index-CsTmbFtk.js";const l={title:"Finally, Shraavan
 `,e.jsx(n.li,{children:e.jsx(n.strong,{children:"Ravas Fry"})}),`
 `,e.jsx(n.li,{children:e.jsx(n.strong,{children:"Rice Bhakri & Rice"})}),`
 `]}),`
-`,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/hotel-malvan-crab-surmai.jpeg",width:1280,height:804,alt:"Crab curry, rice bhakri and surmai fry at Hotel Malvan",className:"rounded-2xl shadow-md"})}),`
 `,e.jsx(n.h2,{children:e.jsx("u",{children:"Crab Masala"})}),`
 `,e.jsxs(n.p,{children:["I have always had ",e.jsx(n.strong,{children:"crab curry at home"}),", so I wanted to try it at a restaurant at least once and experience some new flavours."]}),`
 `,e.jsxs(n.p,{children:["The crab masala came with ",e.jsx(n.strong,{children:"two centre portions of the crab, along with two legs"}),". The curry had deep flavours and was slightly thick."]}),`
@@ -25,12 +24,13 @@ import{u as t,j as e}from"./index-CsTmbFtk.js";const l={title:"Finally, Shraavan
 `,e.jsx(n.p,{children:"It wasn't too spicy and wasn't too bland either — it was just perfect."}),`
 `,e.jsx(n.p,{children:"The piece of Surmai was also big enough for two people, so we shared it between the two of us."}),`
 `,e.jsx(r,{value:"9"}),`
-`,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/hotel-malvan-ravas.jpeg",width:841,height:1280,alt:"Ravas fry at Hotel Malvan",className:"rounded-2xl shadow-md"})}),`
+`,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/hotel-malvan-crab-surmai.jpeg",width:1280,height:804,alt:"Crab curry, rice bhakri and surmai fry at Hotel Malvan",className:"rounded-2xl shadow-md"})}),`
 `,e.jsx(n.h2,{children:e.jsx("u",{children:"Ravas Fry"})}),`
 `,e.jsxs(n.p,{children:["The ",e.jsx(n.strong,{children:"Ravas Fry"})," felt more like a starter dish, but I had it along with the rice and crab curry."]}),`
 `,e.jsxs(n.p,{children:["It was served as ",e.jsx(n.strong,{children:"boneless fish cubes"}),", which made it very easy to eat."]}),`
 `,e.jsx(n.p,{children:"The fish was fresh and the dish was very delicious."}),`
 `,e.jsx(r,{value:"9"}),`
+`,e.jsx("div",{className:"flex justify-center my-6",children:e.jsx("img",{src:"/Blogs/Media/hotel-malvan-ravas.jpeg",width:841,height:1280,alt:"Ravas fry at Hotel Malvan",className:"rounded-2xl shadow-md"})}),`
 `,e.jsx(n.h2,{children:e.jsx("u",{children:"Rice Bhakri & Rice"})}),`
 `,e.jsxs(n.p,{children:["The ",e.jsx(n.strong,{children:"rice bhakri"})," was thin, soft and evenly cooked."]}),`
 `,e.jsxs(n.p,{children:["The rice was ",e.jsx(n.strong,{children:"long-grain rice"}),", although it wasn't basmati, and it was still good."]}),`
