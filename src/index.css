@@ -11,7 +11,6 @@
     /* Text + Background */
     --text: 29 44% 12%;               /* Espresso #2C1E11 */
     --background: 36 50% 96%;         /* Alabaster cream #FAF6F0 */
-    --foreground: 29 44% 12%;
 
     /* Brand */
     /* Buttons and links use a deeper terracotta so cream text passes WCAG AA (5.2:1). */
@@ -19,27 +18,16 @@
     --decor: 24 68% 53%;              /* Terracotta #D97736: glows, borders and underlines only */
     --primary-foreground: 36 50% 97%;
     --secondary: 23 79% 30%;          /* Burnt earth #893E10 (hover) */
-    --secondary-foreground: 36 50% 97%;
     --accent: 23 79% 30%;
-    --accent-foreground: 36 50% 97%;
 
     /* Surfaces */
     --card: 33 41% 91%;               /* Roasted almond #F2EAE0 */
-    --card-foreground: 29 44% 12%;
-    --muted: 33 35% 88%;
     --muted-foreground: 31 25% 29%;   /* Soft walnut #5C4A37 */
-    --popover: 36 50% 97%;
-    --popover-foreground: 29 44% 12%;
 
     /* Lines */
     --border: 31 28% 78%;
-    --input: 31 28% 78%;
-    --ring: 24 68% 53%;
 
     --radius: 0.5rem;                 /* 8px: organic, never pill-shaped */
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
 
     --glow: 0.14;                     /* strength of the background terracotta glow */
 

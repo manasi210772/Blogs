@@ -7,11 +7,6 @@ export const fadeUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease } },
 };
 
-export const fadeIn: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.6, ease } },
-};
-
 export const staggerContainer = (stagger = 0.08, delay = 0): Variants => ({
   hidden: {},
   visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
@@ -26,9 +21,8 @@ export const lift = { y: -2 };
 export const press = { y: 0 };
 
 // Colour tokens are bare HSL triplets in CSS variables (see index.css). Framer cannot
-// tween `var()` strings, so resolve to a comma-form hsla() at animation time. Always call
-// this inside a function variant so the current light/dark values are read on each hover.
-export const hsl = (token: string, alpha = 1) => {
+// tween `var()` strings, so resolve to a comma-form hsla() at animation time.
+const hsl = (token: string, alpha = 1) => {
   const [h, s, l] = getComputedStyle(document.documentElement)
     .getPropertyValue(`--${token}`)
     .trim()
@@ -44,8 +38,4 @@ export const titleHover: Variants = {
 
 export const cardHover = (alpha: number): Variants => ({
   hover: () => ({ y: -2, borderColor: hsl("primary", alpha), transition: hoverTransition }),
-});
-
-export const linkHover = (token: string): Variants => ({
-  hover: () => ({ ...lift, color: hsl(token), transition: hoverTransition }),
 });
