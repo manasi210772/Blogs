@@ -1,4 +1,4 @@
-import{u as a,j as e}from"./index-_X1OEtFk.js";const s={title:"When the Molten Cookie Didn't Melt My Heart – Kill No Kalorie",date:"2026-11-10",description:"A social-media-inspired visit to Kill No Kalorie Cafe in Thane to try its molten cookie with vanilla ice cream. Did it live up to expectations?"};function o(n){const t={h2:"h2",h3:"h3",p:"p",strong:"strong",...a(),...n.components},{Rating:i}=t;return i||r("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(t.h2,{children:e.jsx("u",{children:"Introduction"})}),`
+import{u as r,j as e}from"./index-CdgfA2D_.js";const s={title:"When the Molten Cookie Didn't Melt My Heart – Kill No Kalorie",date:"2026-11-10",description:"A social-media-inspired visit to Kill No Kalorie Cafe in Thane to try its molten cookie with vanilla ice cream. Did it live up to expectations?"};function a(n){const t={h2:"h2",h3:"h3",p:"p",strong:"strong",...r(),...n.components},{Rating:o}=t;return o||l("Rating"),e.jsxs(e.Fragment,{children:[e.jsx(t.h2,{children:e.jsx("u",{children:"Introduction"})}),`
 `,e.jsxs(t.p,{children:["After getting influenced by yet another social media reel, I decided to try the ",e.jsx(t.strong,{children:"Molten Cookie with Ice Cream"})," at ",e.jsx(t.strong,{children:"Kill No Kalorie Cafe"}),", located on Ghantali Road, Thane."]}),`
 `,e.jsx(t.p,{children:"The combination looked tempting in the reel, and I was curious to try it myself."}),`
 `,e.jsx(t.h2,{children:e.jsx("u",{children:"The Cafe"})}),`
@@ -18,9 +18,9 @@ import{u as a,j as e}from"./index-_X1OEtFk.js";const s={title:"When the Molten C
 `,e.jsx(t.p,{children:e.jsx(t.strong,{children:"But no, that didn't help either."})}),`
 `,e.jsx(t.p,{children:"The vanilla ice cream had no soul in it. There wasn't any strong vanilla flavour, and the ice cream didn't even feel cold."}),`
 `,e.jsx(t.p,{children:"I understand that placing a hot molten cookie over cold ice cream would affect its temperature. But I still felt that the ice cream shouldn't have lost its coldness so quickly."}),`
-`,e.jsx(i,{value:"4"}),`
+`,e.jsx(o,{value:"4"}),`
 `,e.jsx(t.h3,{children:e.jsx("u",{children:"A Little Look at the Dessert"})}),`
-`,e.jsxs("video",{controls:!0,width:"100%",className:"rounded-2xl shadow-md",children:[e.jsx("source",{src:"/Blogs/Media/kill-no-kalorie-molten-cookie.mp4",type:"video/mp4"}),e.jsx(t.p,{children:"Your browser does not support the video tag."})]}),`
+`,e.jsx("video",{autoPlay:!0,loop:!0,muted:!0,playsInline:!0,width:576,height:1024,"aria-label":"The molten cookie being placed on the vanilla ice cream (no sound). Tap to pause or play.",title:"Tap to pause or play",onClick:i=>i.currentTarget.paused?i.currentTarget.play():i.currentTarget.pause(),className:"cursor-pointer",children:e.jsx("source",{src:"/Blogs/Media/kill-no-kalorie-molten-cookie.mp4",type:"video/mp4"})}),`
 `,e.jsx(t.h2,{children:e.jsx("u",{children:"Was It Anything Like a Sizzling Brownie?"})}),`
 `,e.jsxs(t.p,{children:["The concept of this dessert is quite similar to a ",e.jsx(t.strong,{children:"sizzling brownie with ice cream"})," — a warm, chocolatey dessert served with cold ice cream."]}),`
 `,e.jsx(t.p,{children:"However, I feel the ice cream made this experience awful."}),`
@@ -35,4 +35,4 @@ import{u as a,j as e}from"./index-_X1OEtFk.js";const s={title:"When the Molten C
 `,e.jsx(t.p,{children:"This was another instance where a social media reel convinced me to try something new, but the actual experience didn't match what I had imagined."}),`
 `,e.jsx(t.p,{children:"The molten cookie was dry, the chocolate filling was too dense, and the vanilla ice cream didn't add much to the experience."}),`
 `,e.jsx(t.p,{children:e.jsx(t.strong,{children:"Would I spend ₹325 on this again? Probably not."})}),`
-`,e.jsx(t.p,{children:"Not every viral dessert turns out to be worth the hype, and this was one of those experiences!"})]})}function l(n={}){const{wrapper:t}={...a(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(o,{...n})}):o(n)}function r(n,t){throw new Error("Expected component `"+n+"` to be defined: you likely forgot to import, pass, or provide it.")}export{l as default,s as frontmatter};
+`,e.jsx(t.p,{children:"Not every viral dessert turns out to be worth the hype, and this was one of those experiences!"})]})}function h(n={}){const{wrapper:t}={...r(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(a,{...n})}):a(n)}function l(n,t){throw new Error("Expected component `"+n+"` to be defined: you likely forgot to import, pass, or provide it.")}export{h as default,s as frontmatter};
