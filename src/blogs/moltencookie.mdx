@@ -56,9 +56,19 @@ I understand that placing a hot molten cookie over cold ice cream would affect i
 
 ### <u>A Little Look at the Dessert</u>
 
-<video controls muted playsInline width="100%" className="rounded-2xl shadow-md">
+<video
+  autoPlay
+  loop
+  muted
+  playsInline
+  width={576}
+  height={1024}
+  aria-label="The molten cookie being placed on the vanilla ice cream (no sound). Tap to pause or play."
+  title="Tap to pause or play"
+  onClick={(e) => (e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause())}
+  className="cursor-pointer"
+>
   <source src={`${import.meta.env.BASE_URL}Media/kill-no-kalorie-molten-cookie.mp4`} type="video/mp4" />
-  Your browser does not support the video tag.
 </video>
 
 ## <u>Was It Anything Like a Sizzling Brownie?</u>
