@@ -28,5 +28,6 @@ export const places: Record<string, Place> = {
   "Mahabi Cafe Patisserie Gelato": { lat: 19.24029, lng: 72.96929, area: "Manpada, Thane" },
   "Chinese Wok": { lat: 19.20919, lng: 72.97227, area: "Lakeshore Mall, Thane" },
   "Thane station": { lat: 19.18795, lng: 72.9756, area: "Sugarcane juice stall opposite Alok Hotel", veg: true },
+  "Kill No Kalorie": { lat: 19.1925, lng: 72.97101, area: "Ghantali, Naupada, Thane", veg: true },
   "Manas Jatra": { lat: 17.74793, lng: 73.999, area: "Varye, Satara" },
 };
