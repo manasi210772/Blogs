@@ -70,6 +70,8 @@ const posts: BlogPost[] = [
   {
     slug: "chinesewok",
     place: "Chinese Wok",
+    cover: "Media/chinese-wok.jpeg",
+    coverAlt: "Super Bowl with Manchurian gravy and Hakka noodles, next to a box of veg spring rolls",
     title: "A Vegetarian Detour That Led Me to Chinese Wok",
     description:
       "A search for an interesting vegetarian lunch at Lakeshore Mall led me to Chinese Wok, followed by a refreshing Oreo Frappe from McDonald's.",
