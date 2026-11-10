@@ -16,6 +16,19 @@ export interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: "moltencookie",
+    place: "Kill No Kalorie",
+    cover: "Media/kill-no-kalorie-molten-cookie.jpeg",
+    coverAlt: "Molten cookie served with vanilla ice cream",
+    title: "When the Molten Cookie Didn't Melt My Heart – Kill No Kalorie",
+    description:
+      "A social-media-inspired visit to Kill No Kalorie Cafe in Thane to try its molten cookie with vanilla ice cream. Did it live up to expectations?",
+    date: "2026-11-10",
+    tags: ["Café", "Desserts"],
+    readTime: "4 min read",
+    path: "/blogs/food/moltencookie",
+  },
+  {
     slug: "frullato",
     place: "Frullato",
     cover: "Media/frullato-classic-oreo.jpg",
