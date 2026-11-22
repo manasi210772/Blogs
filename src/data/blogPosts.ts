@@ -97,6 +97,8 @@ const posts: BlogPost[] = [
   {
     slug: "pizzaexpress",
     place: "PizzaExpress",
+    cover: "Media/pizzaexpress-alfredo-pizza.jpeg",
+    coverAlt: "Creamy Alfredo Veggie Pizza from PizzaExpress",
     title: "A Pizza Night That Didn't Go According to Plan",
     description:
       "What started as an Oven Story Pizza craving ended with a late-night PizzaExpress feast and a few pleasant surprises.",
