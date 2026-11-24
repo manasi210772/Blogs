@@ -16,6 +16,19 @@ export interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: "basilhouse",
+    place: "Basil House",
+    cover: "Media/basil-house-dhaniya-tamatar-shorba.jpeg",
+    coverAlt: "Dhaniya Tamatar Shorba at Basil House",
+    title: "A Vegetarian Lunch at Basil House – The Walk, Hiranandani Estate",
+    description:
+      "Exploring Basil House at The Walk, Hiranandani Estate, with Dhaniya Tamatar Shorba, Tofu Chilli and Singaporean Noodles.",
+    date: "2026-11-24",
+    tags: ["Restaurant", "Vegetarian"],
+    readTime: "4 min read",
+    path: "/blogs/food/basilhouse",
+  },
+  {
     slug: "moltencookie",
     place: "Kill No Kalorie",
     cover: "Media/kill-no-kalorie-molten-cookie.jpeg",

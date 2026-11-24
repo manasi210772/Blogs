@@ -21,6 +21,7 @@ export const places: Record<string, Place> = {
   Frullato: { lat: 19.25862, lng: 72.98471, area: "Hiranandani Estate, Thane", veg: true },
   "Chimichurri: The Asian Kitchen": THE_WALK,
   PizzaExpress: THE_WALK,
+  "Basil House": { lat: 19.25611, lng: 72.98376, area: "The Walk, Hiranandani Estate, Thane", veg: true },
   "Blue Tokai Coffee Roasters": { lat: 19.2611, lng: 72.98512, area: "Hiranandani Estate, Thane" },
   Maiz: { lat: 19.25501, lng: 72.98409, area: "Hiranandani Estate, Thane" },
   "Ora Kitchen & Bar": { lat: 19.25156, lng: 72.98289, area: "Hiranandani Estate, Thane" },
