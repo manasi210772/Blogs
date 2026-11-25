@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Utensils } from "lucide-react";
+import CoverPlaceholder from "./CoverPlaceholder";
 import type { BlogPost } from "../data/blogPosts";
 import { getTagColorClass } from "../utils/tagColors";
 import { formatDate } from "../lib/categories";
@@ -33,12 +33,7 @@ const PostCard = ({ post }: { post: BlogPost }) => (
         className="aspect-[16/10] w-full object-cover"
       />
     ) : (
-      <div
-        aria-hidden
-        className="flex aspect-[16/10] w-full items-center justify-center bg-decor/10 text-decor"
-      >
-        <Utensils size={36} strokeWidth={1.5} />
-      </div>
+      <CoverPlaceholder post={post} />
     )}
 
     <div className="flex flex-1 flex-col p-6">
